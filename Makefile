@@ -8,8 +8,8 @@ export MSYS2_ARG_CONV_EXCL=*
 CC  := /opt/gcc-4.8.1/bin/gcc
 CXX := /opt/gcc-4.8.1/bin/g++
 
-MM_PROJECT_DIR := /decomp/objdiff_project/src/Volumes/bobsource/madmax/companies/feral/development/products/madmax/source/perforce/mm/branch/world/source
-MM_CTG_DIR := /decomp/objdiff_project/src/Volumes/bobsource/madmax/companies/feral/development/products/madmax/source/perforce/ctg
+MM_PROJECT_DIR := /decomp/src/Volumes/bobsource/madmax/companies/feral/development/products/madmax/source/perforce/mm/branch/world/source
+MM_CTG_DIR := /decomp/src/Volumes/bobsource/madmax/companies/feral/development/products/madmax/source/perforce/ctg
 
 # Default Flags
 CFLAGS   := -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -std=gnu99 -fno-common -fPIC -fvisibility=hidden -fstack-protector -DNDEBUG -I$(MM_PROJECT_DIR) -I$(MM_CTG_DIR)
