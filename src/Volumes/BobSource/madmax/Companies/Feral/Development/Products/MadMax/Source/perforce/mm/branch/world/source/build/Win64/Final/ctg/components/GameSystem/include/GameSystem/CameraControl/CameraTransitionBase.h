@@ -1,0 +1,1 @@
+// Workspace file: CameraTransitionBase.h

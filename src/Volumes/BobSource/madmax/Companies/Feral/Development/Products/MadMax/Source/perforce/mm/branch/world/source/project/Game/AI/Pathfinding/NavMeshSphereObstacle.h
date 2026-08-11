@@ -1,0 +1,8 @@
+#ifndef PROJECT_GAME_NAV_MESH_SPHERE_OBSTACLE_H
+#define PROJECT_GAME_NAV_MESH_SPHERE_OBSTACLE_H
+
+class CNavMeshSphereObstacle {
+
+};
+
+#endif

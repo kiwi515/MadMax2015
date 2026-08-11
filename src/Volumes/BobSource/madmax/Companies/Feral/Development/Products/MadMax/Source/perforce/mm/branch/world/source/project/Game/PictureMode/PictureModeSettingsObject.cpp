@@ -1,0 +1,1 @@
+// Workspace file: PictureModeSettingsObject.cpp

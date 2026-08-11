@@ -1,0 +1,8 @@
+#ifndef COMPONENT_RESOURCE_INTERFACE_H
+#define COMPONENT_RESOURCE_INTERFACE_H
+
+class IResource {
+
+};
+
+#endif
