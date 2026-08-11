@@ -52,6 +52,10 @@ class CSetTransformConstraint {
 
 };
 
+struct HThreadMutexName { // could not find where this is actually defined
+
+};
+
 class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, public IPhysicsGameObjectListenable {
     struct SQueuedImpulsePair {
         public:
@@ -373,7 +377,73 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     unsigned char m_SavedOffsetLod;
     bool m_DynamicLODOverridden;
     float m_SavedScaleLod;
+
+    // static variables
+    public: 
+    static CHashString FullBody;
+    static CHashString UpperBody;
+    static CHashString ALL_LAYERS;
+    static CHashString RagdollRB_Head;
+    static CHashString RagdollRB_Spine1;
+    static CHashString RagdollRBGroup_Head;
+    static CHashString RagdollRBGroup_Torso;
+    static CHashString RagdollRBGroup_LeftArm;
+    static CHashString RagdollRBGroup_RightArm;
+    static CHashString RagdollRBGroup_LeftLeg;
+    static CHashString RagdollRBGroup_RightLeg;
+    static const uint32_t MAX_DECAL_TO_BONE_MAPPING_SLOTS;
+    static uint32_t sIntervalCounter;
+    static uint32_t sCreationID;
+    static CHashString on_fire;
+    static CHashString on_fire_light;
+    static CHashString max_on_fire;
+    static CHashString max_on_fire_light;
+    static CHashString max_on_fire_buffed;
+    static CHashString s_OnFireAct;
+    static CHashString s_ForceOffFireAct;
+    static bool sDebugBulletDamagesEnabled;
+    static bool sDebugTrackMessagesEnabled;
+    static float HeightC_FallNoDamage;
+    static float VehicleDamageMin;
+    static float VehicleDamageFactor;
+    static float VehiclePainMin;
+    static float VehiclePainFactor;
+    static float VehicleDeathSpeed;
+    static float VehicleReactSpeed;
+    static float m_WeaponDespawnTime;
+    static float m_ExplosiveDespawnTime;
+    static float m_UpperDecalSpawnDmg;
+    static float m_LowerDecalSpawnDmg;
+    static float m_BloodDecalDistance;
+    static bool m_BloodEnabled;
+    static bool m_GibsEnabled;
+    static bool m_DoIntervalUpdate;
+
+    private: 
+    static const float s_LodLimits[5];
+    static const float s_LodScale[5];
+    static float HeightD_Jump;
+    static float HeightE_Ground;
+    static int32_t NofCharacters;
+    static const float m_MovementInputThreshold;
+    static bool m_DebugHealth;
+
+    public: 
+    static HThreadMutexName* m_OnStateTransitionLock;
+
+    protected: 
+    static int32_t m_NofDetectedByPlayer;
+
+    public: 
+    static uint64_t m_PlayerDeaths;
+    static uint64_t m_NPCDeaths;
+
+    private: 
+    static unsigned char m_PictureModeMinLod;
+    static unsigned char m_PictureModeOffsetLod;
+    static float m_PictureModeScaleLod;
     
+    // methods
     public:
     static bool IsDead(float for_how_long);
     static float GetFloatRegister(int32_t index);
