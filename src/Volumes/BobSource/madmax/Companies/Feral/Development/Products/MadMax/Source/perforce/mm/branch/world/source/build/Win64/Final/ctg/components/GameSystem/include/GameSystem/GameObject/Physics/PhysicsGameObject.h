@@ -4,6 +4,10 @@
 #include "build/Win64/Final/ctg/components/GameSystem/include/GameSystem/GameObject/GameObject.h"
 #include "build/Win64/Final/ctg/components/Physics/include/Physics/PfxGameObject.h"
 
+class CPhysicsGameObjectListenerContainer {
+
+};
+
 class CPhysicsGameObject : public IPfxGameObject, public CGameObject {
     public:
     struct SHitByExplosionData {
@@ -11,6 +15,10 @@ class CPhysicsGameObject : public IPfxGameObject, public CGameObject {
     };
 
     struct SHitByBulletData {
+
+    };
+
+    struct SHitByFireData {
 
     };
 };

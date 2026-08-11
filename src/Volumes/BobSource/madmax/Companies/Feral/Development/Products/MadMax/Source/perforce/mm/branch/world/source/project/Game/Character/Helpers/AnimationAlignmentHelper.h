@@ -1,1 +1,8 @@
-// Workspace file: AnimationAlignmentHelper.h
+#ifndef PROJECT_GAME_ANIMATION_ALIGNMENT_HELPER_H
+#define PROJECT_GAME_ANIMATION_ALIGNMENT_HELPER_H
+
+class CAnimationAlignmentHelper {
+
+};
+
+#endif

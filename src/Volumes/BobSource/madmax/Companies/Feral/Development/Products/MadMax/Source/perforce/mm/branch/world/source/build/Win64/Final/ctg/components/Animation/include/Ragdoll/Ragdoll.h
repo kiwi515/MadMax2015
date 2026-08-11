@@ -1,1 +1,10 @@
-// Workspace file: Ragdoll.h
+#ifndef COMPONENTS_RAGDOLL_H
+#define COMPONENTS_RAGDOLL_H
+
+namespace NAnimationSystem {
+    struct SRagdollParams {
+
+    };
+};
+
+#endif

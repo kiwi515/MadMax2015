@@ -1,1 +1,8 @@
-// Workspace file: AnimStateTransitionObserver.h
+#ifndef PROJECT_GAME_ANIM_STATE_TRANSITION_OBSERVER_H
+#define PROJECT_GAME_ANIM_STATE_TRANSITION_OBSERVER_H
+
+class IAnimStateTransitionObserver {
+
+};
+
+#endif

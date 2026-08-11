@@ -1,1 +1,8 @@
-// Workspace file: ObjectBlackboard.h
+#ifndef PROJECT_FRAGMENTS_OBJECT_BLACKBOARD_H
+#define PROJECT_FRAGMENTS_OBJECT_BLACKBOARD_H
+
+struct SBlackboard {
+
+};
+
+#endif
