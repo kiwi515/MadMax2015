@@ -10,8 +10,31 @@ class CPhysicsGameObjectListenerContainer {
 
 class CPhysicsGameObject : public IPfxGameObject, public CGameObject {
     public:
-    struct SHitByExplosionData {
-
+    struct SHitByExplosionData { /* Size=0x60 */
+        public: 
+        CVector3f m_Position;
+        CVector3f m_Direction;
+        float m_Damage;
+        float m_Impulse;
+        int32_t m_Faction;
+        int32_t m_Level;
+        float m_ExecuteDelay;
+        float m_Radius;
+        float m_DamageScale;
+        float m_DamageRadius;
+        float m_FireDamageRadius;
+        CHashString m_AnimationEvent;
+        CVector3f m_HitPosition;
+        float m_Distance;
+        float m_ForcePower;
+        float m_PhysicsImpulse;
+        CHashString m_DamageType;
+        CHashString m_ExplosionTypeName;
+        
+        public: 
+        SHitByExplosionData(const CPhysicsGameObject::SHitByExplosionData&);
+        SHitByExplosionData();
+        CPhysicsGameObject::SHitByExplosionData& operator=(const CPhysicsGameObject::SHitByExplosionData&);
     };
 
     struct SHitByBulletData {

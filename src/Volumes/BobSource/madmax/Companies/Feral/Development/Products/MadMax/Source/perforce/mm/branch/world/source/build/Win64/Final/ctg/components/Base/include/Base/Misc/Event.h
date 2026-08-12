@@ -1,6 +1,8 @@
 #ifndef COMPONENT_EVENT_H
 #define COMPONENT_EVENT_H
 
+#include "build/Win64/Final/ctg/components/Base/include/Base/Misc/EventArguments.h"
+
 namespace NEvent {
     struct CEventData;
     class CEventBase;
@@ -43,11 +45,6 @@ class CEventSystem : public CAvaSingle<CEventSystem> {
 };
 
 namespace NEvent {
-    struct CEventData {
-        uint64_t m_Type;
-        const void* m_Pointers[5];
-    };
-
     class CEventBase {
         public:
         TEventHandle* m_EventImpl;

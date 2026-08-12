@@ -305,19 +305,20 @@ void CPlayer::DoActReactHitFly() {
 }
 
 void CPlayer::HitByExplosion(CPhysicsGameObject::SHitByExplosionData& data) {
-    return;
+    if (data.m_Damage > 0.0f) {
+        SEventID eventID(0x52d877b2, 0);
+    
+        NEvent::CEventData eventData(0xffffffffff, nullptr, nullptr, nullptr, nullptr, nullptr);
+        
+        CAvaSingle<CEventSystem>::Instance->SendEvent(&eventID, 1, eventData);
+    }
 }
 
 void CPlayer::OnDeath(CHashString type) {
     uint32_t deathType = 0x55d68f0d;
     SEventID eventID(deathType, 0);
     
-    NEvent::CEventData eventData;
-    eventData.m_Type = 0xffffffffff;
-    eventData.m_Pointers[0] = 0;
-    eventData.m_Pointers[1] = 0;
-    eventData.m_Pointers[2] = 0;
-    eventData.m_Pointers[3] = 0;
+    NEvent::CEventData eventData(0xffffffffff, nullptr, nullptr, nullptr, nullptr, nullptr);
 
     CAvaSingle<CEventSystem>::Instance->SendEvent(&eventID, 1, eventData);
         
