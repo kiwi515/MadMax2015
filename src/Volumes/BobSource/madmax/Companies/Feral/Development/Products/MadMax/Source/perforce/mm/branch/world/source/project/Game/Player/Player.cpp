@@ -309,7 +309,36 @@ void CPlayer::HitByExplosion(CPhysicsGameObject::SHitByExplosionData& data) {
 }
 
 void CPlayer::OnDeath(CHashString type) {
-    return;
+    uint32_t deathType = 0x55d68f0d;
+    SEventID eventID(deathType, 0);
+    
+    NEvent::CEventData eventData;
+    eventData.m_Type = 0xffffffffff;
+    eventData.m_Pointers[0] = 0;
+    eventData.m_Pointers[1] = 0;
+    eventData.m_Pointers[2] = 0;
+    eventData.m_Pointers[3] = 0;
+
+    CAvaSingle<CEventSystem>::Instance->SendEvent(&eventID, 1, eventData);
+        
+    size_t count = 0;
+    auto iterator = m_LastDeathTimes.begin();
+    auto endIterator = m_LastDeathTimes.end();
+
+    while (iterator != endIterator) {
+        count++;
+        iterator++;
+    }
+
+    if(count > 2) {
+        m_LastDeathTimes.pop_front();
+    }
+
+    uint32_t gameTime = CAvaSingle<Base::CClock>::Instance->GetGameTime(true);
+
+    m_LastDeathTimes.push_back(gameTime);
+
+    this->m_ReviveCostValuesDirty = true;
 }
 
 bool CPlayer::IsType(const CRttiTypeId& id) const {

@@ -36,6 +36,9 @@ class CAvaSingle;
 #include "build/Win64/Final/ctg/components/GameSystem/include/GameSystem/Online/EventStructs_gen.h"
 #include "project/Game/Character/CharacterManager.h"
 #include "build/Win64/Final/ctg/components/GameSystem/include/GameSystem/GlobalDictionary.h"
+#include "build/Win64/Final/engine/AvaCore/main/AvaCore/Types/EventID.h"
+#include "build/Win64/Final/ctg/components/Base/include/Base/Misc/Event.h"
+#include "build/Win64/Final/ctg/components/Base/include/Base/Timer/Clock.h"
 
 
 class CPlayer : public NEvent::CEventHandler, public CAvatar, public CRtti {

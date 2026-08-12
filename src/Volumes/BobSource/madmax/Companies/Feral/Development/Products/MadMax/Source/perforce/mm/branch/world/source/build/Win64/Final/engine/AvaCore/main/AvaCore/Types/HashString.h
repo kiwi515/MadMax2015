@@ -38,7 +38,9 @@ class CHashString {
     bool operator<(const CHashString& other) const {
         return this->m_Hash < other.m_Hash;
     };
-    uint32_t get() const;
+    uint32_t get() const {
+        return m_Hash;
+    };
     
     static uint32_t Hash(const char*);
 };

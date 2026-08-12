@@ -1,6 +1,26 @@
 #ifndef COMPONENT_EVENT_H
 #define COMPONENT_EVENT_H
 
+namespace NEvent {
+    struct CEventData;
+    class CEventBase;
+    class CBaseSendEvent;
+    class CEventImpl;
+    class CEventHandler;
+    
+    template <typename... Args>
+    class CEventWithArguments;
+
+    template <typename... Args>
+    class CReceiveEvent;
+
+    template <typename... Args>
+    class CSendEvent;
+}
+
+struct TEventHandle;
+class CEventSystem;
+
 #include <cstdint>
 #include <array>
 #include <list>
@@ -10,9 +30,16 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
+#include "build/Win64/Final/engine/AvaCore/main/AvaCore/Misc/Singleton.h"
+#include "build/Win64/Final/engine/AvaCore/main/AvaCore/Types/EventID.h"
 
 struct TEventHandle {
     uint64_t dummy;
+};
+
+class CEventSystem : public CAvaSingle<CEventSystem> {
+    public:
+    void SendEvent(const SEventID*, int32_t, const NEvent::CEventData&);
 };
 
 namespace NEvent {
