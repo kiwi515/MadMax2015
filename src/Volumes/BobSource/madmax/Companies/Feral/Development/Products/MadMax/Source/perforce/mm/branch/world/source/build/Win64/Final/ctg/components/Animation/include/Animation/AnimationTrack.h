@@ -5,6 +5,10 @@ namespace NAnimationSystem {
     struct STrackEventData {
 
     };
+
+    struct SAnimationMessageData { // guess on location
+
+    };
 };
 
 #endif

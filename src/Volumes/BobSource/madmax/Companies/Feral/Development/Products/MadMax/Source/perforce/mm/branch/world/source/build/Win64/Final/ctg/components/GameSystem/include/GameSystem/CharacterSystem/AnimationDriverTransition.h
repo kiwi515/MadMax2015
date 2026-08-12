@@ -1,1 +1,8 @@
-// Workspace file: AnimationDriverTransition.h
+#ifndef COMPONENT_ANIMATION_DRIVER_TRANSITION_H
+#define COMPONENT_ANIMATION_DRIVER_TRANSITION_H
+
+class CAnimationDriverTransition {
+
+};
+
+#endif
