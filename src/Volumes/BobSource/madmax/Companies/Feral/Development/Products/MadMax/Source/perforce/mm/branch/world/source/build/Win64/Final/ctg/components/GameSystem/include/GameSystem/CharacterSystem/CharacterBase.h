@@ -36,7 +36,7 @@ class CCharacterBase : public IPfxCharacter, public CRtti {
     CVector3f m_AngularVelocity;
     float m_MaxAngularSpeed;
     float m_MaxAngularAcceleration;
-    CPfxRigidBodyCharacterInstance* m_PfxCharacter;
+    std::shared_ptr<CPfxRigidBodyCharacterInstance> m_PfxCharacter; // BOOST PTR
     CAttachable m_Attachable;
     void* m_AttachedObject;
     CVector3f m_VelocityAnimation;
@@ -44,7 +44,7 @@ class CCharacterBase : public IPfxCharacter, public CRtti {
     CVector3f m_MeasuredLinearVelocity;
     float m_MeasuredWorldSpeed;
     CVector3f m_MeasuredAngularVelocity;
-    NCharacterSystem::CCharacterController* m_ActiveController;
+    std::weak_ptr<NCharacterSystem::CCharacterController> m_ActiveController; // BOOST PTR
     CHashString NullId;
     unsigned char m_Gender;
     unsigned char m_AttachType;
@@ -64,8 +64,8 @@ class CCharacterBase : public IPfxCharacter, public CRtti {
     bool IsInitialized() const;
     bool IsPaused() const;
     void SetPaused(bool);
-    const NCharacterSystem::CCharacterController& GetController() const;
-    void SetController(const NCharacterSystem::CCharacterController&);
+    const std::weak_ptr<NCharacterSystem::CCharacterController>& GetController() const; // BOOST PTR
+    void SetController(const std::weak_ptr<NCharacterSystem::CCharacterController>&); // BOOST PTR
     virtual void ResetController();
     virtual bool IsPlayerControlled() const;
     bool IsMale();
@@ -127,7 +127,7 @@ class CCharacterBase : public IPfxCharacter, public CRtti {
     CPfxCharacterInstance* GetPfxCharacter();
     IPfxInstance* GetIPfxInstance();
     CPfxCharacterInstance::CharacterInput& GetPhysicsInputState();
-    virtual CVehicle* GetVehicle() const;
+    virtual std::shared_ptr<CVehicle> GetVehicle() const; // BOOST PTR
     const TResourceCachePtr<NAnimationSystem::CSkeletonImpl>& GetSkeleton();
     const CMatrix4f& GetPreviousTransform();
     CAttachable& GetAttachable();

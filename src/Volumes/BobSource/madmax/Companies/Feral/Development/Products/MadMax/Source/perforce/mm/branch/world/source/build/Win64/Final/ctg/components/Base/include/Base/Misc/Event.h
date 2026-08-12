@@ -60,7 +60,7 @@ namespace NEvent {
         CEventBase* m_Impl;
 
         CBaseSendEvent();
-        virtual ~CBaseSendEvent();
+        ~CBaseSendEvent();
 
         void Send(const CEventData& data) const;
     };

@@ -28,6 +28,9 @@ public:
         float m32;
         float m33;
     };
+
+      public: 
+      CMatrix4f(float, float, float, float, float, float, float, float, float, float, float, float, float, float, float, float);
 };
 
 #endif

@@ -180,7 +180,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     TArray<CCharacter::SQueuedImpulsePair> m_QueuedImpulses;
 
     public: 
-    CExplosives* m_ActiveGrenade; // BOOST PTR
+    std::shared_ptr<CExplosives> m_ActiveGrenade; // BOOST PTR
     uint32_t m_SpellCastSeed;
     uint32_t m_SpellCritSeed;
     float m_HeightOverGround;
@@ -213,10 +213,10 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     bool m_SyncRagdollUsePoseBoneVelocities : 1; /* BitPos=7 */
     float m_ContinousRagdollPartialEnableTimer;
     CInventory* m_Inventory;
-    CItemObject* m_WieldedItem; // BOOST PTR
+    std::shared_ptr<CItemObject> m_WieldedItem; // BOOST PTR
     CCharacterStats m_Stats;
     CCharacterDaze m_Daze;
-    std::vector<CItemObject*,std::allocator<CItemObject* > > m_InventoryAttachedItems; // BOOST PTR
+    std::vector<std::shared_ptr<CItemObject>,std::allocator<std::shared_ptr<CItemObject> > > m_InventoryAttachedItems; // BOOST PTR
     CPhysicsGameObjectListenerContainer m_Listeners;
     int32_t m_MaterialBelow;
     CVector3f m_SurfaceNormal;
@@ -395,10 +395,10 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     protected: 
     std::vector<SObjectID,std::allocator<SObjectID> > m_GiveItems;
     SObjectID m_TargetInfo;
-    CStateContainerDataTargetInfo* m_wpTargetInfo; // BOOST PTR
+    std::weak_ptr<CStateContainerDataTargetInfo> m_wpTargetInfo; // BOOST PTR
     CCharacterTargetHandler m_targetHandler;
     CLocomotionGraph m_LocomotionGraph;
-    COutline* m_BerserkOutline; // BOOST PTR
+    std::weak_ptr<COutline> m_BerserkOutline; // BOOST PTR
     float m_DetectedByPlayerMaxRadius;
     float m_DetectedByPlayerCooldown;
     float m_TimeSinceDetectedByPlayer;
@@ -421,7 +421,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     CRagdollCollisionListener* m_RagdollCollisionListener;
     const NAnimationSystem::SRagdollParams* m_CurrentRagdollParams;
     CHashString m_CurrentRagdollParamsID;
-    NAnimationSystem::CRagdollInstanceImpl* m_Ragdoll; // BOOST PTR
+    std::shared_ptr<NAnimationSystem::CRagdollInstanceImpl> m_Ragdoll; // BOOST PTR
     CPfxRagdollProxyPhantom m_PfxRagdollProxyPhantom;
     float m_TimeBeforeSystemGroupReset;
     float m_TimeBeforeNoCollideIDReset;
@@ -650,7 +650,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     float GetFloatRegister(int32_t);
     void SetGlobalXvmFloat(int32_t, float);
     float GetGlobalXvmFloat(int32_t);
-    CCharacter* GetSharedRef(); // BOOST PTR
+    std::shared_ptr<CCharacter> GetSharedRef(); // BOOST PTR
     virtual NModelSystem::CModelInstance* GetModel(uint64_t) const;
     virtual uint64_t GetNumModels() const;
     virtual bool GetModelAABB(CAABox&) const;
@@ -770,7 +770,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     const float GetLatestSuccesfullSPellGivenTime();
     void SetLatestSuccesfulSpellReceivedTime(const float);
     const float GetLatestSuccesfullSPellReceivedTime();
-    void UpdateLastSpellHitInfo(const CGameObject*&, const CVector3f&, const CVector3f&, uint32_t); // BOOST PTR on CGameObject
+    void UpdateLastSpellHitInfo(const std::weak_ptr<CGameObject>&, const CVector3f&, const CVector3f&, uint32_t); // BOOST PTR on CGameObject
     bool HasActiveGrenade() const;
     void SetHeightOverGround(float, bool);
     float GetHeightOverGround(bool) const;
@@ -782,7 +782,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     void Pause();
     void UnPause();
     void SetPaused(bool);
-    virtual CVehicle* GetVehicle() const; // BOOST PTR
+    virtual std::shared_ptr<CVehicle> GetVehicle() const; // BOOST PTR
     CVehicle* GetVehiclePtr() const;
     bool IsAttachedToVehicle() const;
     void ClearAttachedAnimScaleStuff();
@@ -827,7 +827,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     CAnimationDriverTransition* GetAnimationDriver(const CHashString&) const;
     CAnimationDriverTransition* GetAnimationDriverByIndex(uint32_t) const;
     CLocomotionGraph* GetLocomotionGraph();
-    void ReplaceLayerState(int32_t, NAnimationSystem::CStateMachineInstance*&, TResourceCachePtr<NAnimationSystem::CAnimationSet>&); // BOOST PTR
+    void ReplaceLayerState(int32_t, std::shared_ptr<NAnimationSystem::CStateMachineInstance>&, TResourceCachePtr<NAnimationSystem::CAnimationSet>&); // BOOST PTR
     void SetupForSequence();
     bool InSequence() const;
     void ReplaceAnimationLayer(const CHashString&, const CHashString&, const CHashString&);
@@ -895,7 +895,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     void AttachExternItemToBone(CItemObject*, CHashString);
     void ApplyImpulseToSOParent(const CVector3f&);
     void ApplyImpulseToSOAGoal(const CVector3f&);
-    bool DoReload(const CWeapon*&); // BOOST PTR
+    bool DoReload(const std::shared_ptr<CWeapon>&); // BOOST PTR
     CGameObject* GetLinkTarget() const;
     void SetLinkTarget(CGameObject*);
     void MoveLinkSourceFirst(CGameObject*);
@@ -934,14 +934,14 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     void UpdateDetectedByPlayer(const float);
 
     public: 
-    CStateContainerDataTargetInfo* GetAimSystemTargetInfo(); // BOOST PTR
+    std::shared_ptr<CStateContainerDataTargetInfo> GetAimSystemTargetInfo(); // BOOST PTR
     bool IsDetectedByPlayer() const;
     NCharacterSystem::CAnimationControl* GetAnimController();
     uint32_t GetFullBodyIndex();
     bool FadeIn(float);
     bool FadeOut(float);
     bool IsFaded() const;
-    NAnimationSystem::IIKTwoJoints*& GetTwoJointsIKChain(CCharacterIK::ETypes); // BOOST PTR
+    std::shared_ptr<NAnimationSystem::IIKTwoJoints>& GetTwoJointsIKChain(CCharacterIK::ETypes); // BOOST PTR
     void UpdateIKTargets(float);
     int32_t GetBoneIndex(const CHashString&) const;
     bool HasBone(const CHashString&) const;
@@ -969,7 +969,7 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     void FixupRagdollConstraints(float);
     void SyncWorldMatrixToRagdoll();
     void SyncRagdollToWorldMatrix();
-    const NAnimationSystem::CRagdollInstanceImpl*& GetRagdoll(); // BOOST PTR
+    const std::shared_ptr<NAnimationSystem::CRagdollInstanceImpl>& GetRagdoll(); // BOOST PTR
     void SetCurrentRagdollParamsID(const CHashString&, bool, bool);
     void SetRagdollParams(const NAnimationSystem::SRagdollParams&);
     const CHashString& GetCurrentRagdollParamsID();
@@ -977,10 +977,10 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     bool HasRagdoll() const;
     void InitRagdollVelocity();
     void PrepareRagdoll(const TResourceCachePtr<NAnimationSystem::CSkeletonImpl>&);
-    void SyncToRagdoll(const NAnimationSystem::CRagdollInstanceImpl*&, const NAnimationSystem::CRagdollInstanceImpl*&); // BOOST PTR
+    void SyncToRagdoll(const std::shared_ptr<NAnimationSystem::CRagdollInstanceImpl>&, const NAnimationSystem::CRagdollInstanceImpl*&); // BOOST PTR
     bool GetVelocityForBone(int32_t, CVector3f&, CVector3f&) const;
-    CPfxRigidBody* GetRagdollRigidBodyForHiBone(int32_t); // BOOST PTR
-    CPfxRigidBody* GetRagdollRigidBodyForLoBone(int32_t); // BOOST PTR
+    std::weak_ptr<CPfxRigidBody> GetRagdollRigidBodyForHiBone(int32_t); // BOOST PTR
+    std::weak_ptr<CPfxRigidBody> GetRagdollRigidBodyForLoBone(int32_t); // BOOST PTR
     bool GetRagdollPositionForBone(int32_t, CVector3f&) const;
     const char* GetRagdollProxyShapeName(const hkpShape*);
     CPfxRagdollProxyPhantom& GetRagdollProxyPhantom();

@@ -128,7 +128,7 @@ class CPlayer : public NEvent::CEventHandler, public CAvatar, public CRtti {
     int32_t m_CurrentStateCameraIds[16];
     CPlayer::EDifficulty m_Difficulty;
     float m_GrassFadeTimer;
-    CVehicle* m_LastVehicleAttachedTo;
+    std::weak_ptr<CVehicle> m_LastVehicleAttachedTo; // BOOST PTR
     bool m_HasDOFLocked;
     bool m_WaitForLandscapeLoad;
     bool m_Enabled;

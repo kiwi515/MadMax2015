@@ -14,16 +14,20 @@ class CRttiTypeId {
 };
 
 class CRtti {
-    public: virtual ~CRtti();
-    public: virtual const CRttiTypeId& GetTypeId() const;
-    public: virtual bool IsType(const CRttiTypeId&) const;
-    public: CRtti(const CRtti&);
-    public: CRtti();
-    public: CRtti& operator=(const CRtti&);
-    public: void __local_vftable_ctor_closure();
-    public: virtual void* __vecDelDtor(uint32_t);
+    public: 
+    virtual ~CRtti();
+    virtual const CRttiTypeId& GetTypeId() const;
+    virtual bool IsType(const CRttiTypeId&) const;
+
+    CRtti(const CRtti&);
+    CRtti();
+    CRtti& operator=(const CRtti&);
     
-    public: static const CRttiTypeId& TYPE_ID();
+    void __local_vftable_ctor_closure();
+    virtual void* __vecDelDtor(uint32_t);
+    
+    public: 
+    static const CRttiTypeId& TYPE_ID();
 };
 
 #endif
