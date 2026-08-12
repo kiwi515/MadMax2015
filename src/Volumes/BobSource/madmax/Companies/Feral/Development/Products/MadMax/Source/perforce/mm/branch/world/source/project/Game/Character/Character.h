@@ -1,6 +1,13 @@
 #ifndef PROJECT_GAME_CHARACTER_H
 #define PROJECT_GAME_CHARACTER_H
 
+class CItemObject;
+class CEffectInstance;
+class CAvatar;
+class CWeapon;
+class CRuntimeContainer;
+struct SGameEffectContainer;
+
 #include "build/Win64/Final/ctg/components/GameSystem/include/GameSystem/CharacterSystem/CharacterBase.h"
 #include "project/Game/Interaction/InteractionUserProxy.h"
 #include "project/Game/Health/HealthWrapper.h"
@@ -115,10 +122,6 @@ class CCharacter : public CDamageable, public NCharacterSystem::CCharacterBase, 
     };
 
     struct SShapeImpulsePair {
-
-    };
-
-    struct SHitByFireData {
 
     };
 

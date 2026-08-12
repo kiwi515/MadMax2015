@@ -64,7 +64,8 @@ void CPlayer::UpdateRender(float dt, float dtf, float real_dt) {
 
 bool CPlayer::IsDead()
 {
-    return CCharacter::IsDead(5.0f);
+    CCharacter* pCharacter = this->m_Character;
+    return pCharacter->IsDead(2.0);
 }
 
 const CRttiTypeId& CPlayer::TYPE_ID() {
@@ -102,7 +103,8 @@ void CPlayer::ClearPickups() {
 }
 
 float CPlayer::GetCombatTriggerTimer() const {
-    return CCharacter::GetFloatRegister(this->m_CombatTriggerRegisterIndex);
+    CCharacter* pCharacter = this->m_Character;
+    return pCharacter->GetFloatRegister(this->m_CombatTriggerRegisterIndex);
 }
 
 void CPlayer::UpdateDebug(float dt) {
