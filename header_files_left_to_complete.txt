@@ -1170,7 +1170,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Network/main/include/Network/HttpUtils.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Network/main/include/Network/SocketCommon.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Network/main/include/Network/Tcp.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Network/main/source/Network/SocketHelper.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Profile/main/include/Profile/Profiler.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Profile/main/include/Profile/ProfilerScope.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Render/main/include/Render/ShaderCache.h
@@ -2348,7 +2347,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGUIXState_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGUIXTCRCheck_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGUIXUnloadState_res.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGUIXUnlockRewards_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGUIXWriteVariable_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGameStateInLoad_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGameStateInRun_res.h
@@ -2380,7 +2378,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetEconomyResourceId_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetEconomyResource_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetEncampmentLevel_res.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetEncounterSpawnPointTransform_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetExpEntityFromRaceTrophyId_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetGraphParent_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeGetGriffaTokenCount_res.h
@@ -2541,7 +2538,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeScaleFloat_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeScriptObjectGetPropertyFloat_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeSelectCardinalMovementDirection_res.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeSelectRandom_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeSendGlobalEvent_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeSetAFSM_res.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project/GraphScript/hashfiles/nodes/NodeSetAIRole_res.h
@@ -2950,7 +2946,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/AgoraService.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/EventStructs.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/IDataService.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/IEventData.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/Json/RapidJson.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/MetricsDataServiceManager.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/GameSystem/include/GameSystem/Online/OnlineManager.h
@@ -4140,4 +4135,3 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/fragments/effect/fragments/LocalCopy/InstantiatorHelper.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/fragments/effect/fragments/LocalCopy/SimdHelpersInternal.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/fragments/effect/fragments/ProjectToTerrainHelper.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Tools/FeralLinuxMessage/include/FeralLinuxMessageArgParser.h

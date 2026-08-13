@@ -1,1 +1,4 @@
-// Workspace file: NodeGUIXUnlockRewards_res.h
+#ifndef PROJECT_GRAPHSCRIPT_NODE_GUIX_UNLOCK_REWARDS_H
+#define PROJECT_GRAPHSCRIPT_NODE_GUIX_UNLOCK_REWARDS_H
+
+#endif

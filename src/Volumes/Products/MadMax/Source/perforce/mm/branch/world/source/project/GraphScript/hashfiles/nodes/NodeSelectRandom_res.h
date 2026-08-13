@@ -1,1 +1,4 @@
-// Workspace file: NodeSelectRandom_res.h
+#ifndef PROJECT_GRAPHSCRIPT_NODE_SELECT_RANDOM_RES_H
+#define PROJECT_GRAPHSCRIPT_NODE_SELECT_RANDOM_RES_H
+
+#endif
