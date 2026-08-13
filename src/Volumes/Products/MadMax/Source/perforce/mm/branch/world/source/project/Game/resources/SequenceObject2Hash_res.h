@@ -1,1 +1,4 @@
-// Workspace file: SequenceObject2Hash_res.h
+#ifndef PROJECT_GAME_SEQUENCE_OBJECT_2_HASH_H
+#define PROJECT_GAME_SEQUENCE_OBJECT_2_HASH_H
+
+#endif
