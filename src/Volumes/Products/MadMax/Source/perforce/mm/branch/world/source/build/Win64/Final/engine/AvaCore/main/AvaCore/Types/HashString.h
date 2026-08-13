@@ -32,7 +32,11 @@ class CHashString {
     void reset(const std::basic_string<char,std::char_traits<char>,std::allocator<char> >&);
     void reset(const char*);
     bool operator==(uint32_t) const;
-    bool operator==(const CHashString&) const;
+    
+    bool operator==(const CHashString& rhs) const {
+        return get() == rhs.get();
+    }
+
     bool operator!=(uint32_t) const;
     bool operator!=(const CHashString&) const;
     bool operator<(const CHashString& other) const {

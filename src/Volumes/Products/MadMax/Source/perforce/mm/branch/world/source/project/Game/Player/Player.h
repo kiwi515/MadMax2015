@@ -48,7 +48,7 @@ class CPlayer : public NEvent::CEventHandler, public CAvatar, public CRtti {
         float m_LastDetectedValue;
         CHashString m_KeyBbAlertLevelHash;
         bool m_Dirty;
-        std::map<CCharacter *,float,std::less<CCharacter *>,std::allocator<std::pair<CCharacter * const,float> > > m_EnemyRangeMap;
+        std::map<CCharacter *, float> m_EnemyRangeMap;
     };
 
     struct SPlayerDistanceTraveledTracker {
@@ -72,8 +72,8 @@ class CPlayer : public NEvent::CEventHandler, public CAvatar, public CRtti {
     
     
     public:
-    std::map<CHashString,int,std::less<CHashString>,std::allocator<std::pair<CHashString const ,int> > > m_FuryEventCounter;
-    std::vector<CHashString,std::allocator<CHashString> > m_FuryEventQueue;
+    std::map<CHashString, int> m_FuryEventCounter;
+    std::vector<CHashString> m_FuryEventQueue;
     std::vector<unsigned int,std::allocator<unsigned int> > m_OverrideActionListSortedIncludes;
     std::vector<unsigned int,std::allocator<unsigned int> > m_OverrideActionListSortedExcludes;
     std::vector<unsigned int,std::allocator<unsigned int> > m_ActionList;

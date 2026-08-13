@@ -309,7 +309,6 @@ void CPlayer::HitByExplosion(CPhysicsGameObject::SHitByExplosionData& data) {
         SEventID eventID(0x52d877b2, 0);
     
         NEvent::CEventData eventData(0xffffffffff, nullptr, nullptr, nullptr, nullptr, nullptr);
-        
         CAvaSingle<CEventSystem>::Instance->SendEvent(&eventID, 1, eventData);
     }
 }
@@ -490,7 +489,27 @@ bool CPlayer::IsInBalloon() const {
 }
 
 float CPlayer::GetFuryEventVariationMultiplier(CHashString event_name) {
-    return 0.0f;
+    // size_t i;
+
+    // for (i = 0; i < this->m_FuryEventQueue.size(); i++) {
+    //     if (this->m_FuryEventQueue[i] == event_name) {
+    //         break;
+    //     }
+    // }
+
+    size_t count = 0;
+
+    for (auto it = m_FuryEventQueue.begin(); it != m_FuryEventQueue.end(); ++it) {
+        if (*it == event_name) {
+            count++;
+        }
+    }
+
+    if (count == 0) {
+        return 0.5f;
+    }
+
+    return count * 0.25f * 0.4f + 0.5f;
 }
 
 int32_t CPlayer::GetFuryEventCount(CHashString event_name) {
@@ -551,7 +570,16 @@ void CPlayer::Load(const CSaveContext& save_cont) {
 }
 
 void CPlayer::SensedBy(CCharacter* c, const float detectiveness, const float range) {
-    return;
+    if(detectiveness > this->m_CampThreatValues.m_DetectedValue) {
+        this->m_CampThreatValues.m_DetectedValue = detectiveness;
+    }
+
+    size_t oldSize = this->m_CampThreatValues.m_EnemyRangeMap.size();
+    this->m_CampThreatValues.m_EnemyRangeMap[c] = range;
+
+    if (this->m_CampThreatValues.m_EnemyRangeMap.size() != oldSize) {
+        this->m_CampThreatValues.m_Dirty = true;
+    }
 }
 
 void CPlayer::OverrideActionsGrowList(CInputActionOverride* iao) {
