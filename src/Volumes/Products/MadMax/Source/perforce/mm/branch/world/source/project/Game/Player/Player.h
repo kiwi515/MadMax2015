@@ -41,7 +41,7 @@ class CAvaSingle;
 #include "build/Win64/Final/ctg/components/Base/include/Base/Timer/Clock.h"
 
 
-class CPlayer : public NEvent::CEventHandler, public CAvatar, public CRtti {
+class CPlayer : public NEvent::CEventHandler, public CAvatar {
     public:
     struct CampThreatValues {
         float m_DetectedValue;

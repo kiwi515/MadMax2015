@@ -1,1 +1,4 @@
-// Workspace file: SPhysicsMaterialSwitch_res.h
+#ifndef LIB_SPHYSICS_MATERIAL_SWITCH_RES_H
+#define LIB_SPHYSICS_MATERIAL_SWITCH_RES_H
+
+#endif

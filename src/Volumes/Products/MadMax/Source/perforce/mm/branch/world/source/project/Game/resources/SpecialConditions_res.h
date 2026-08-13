@@ -1,1 +1,4 @@
-// Workspace file: SpecialConditions_res.h
+#ifndef PROJECT_GAME_SPECIAL_CONDITIONS_RES_H
+#define PROJECT_GAME_SPECIAL_CONDITIONS_RES_H
+
+#endif

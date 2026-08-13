@@ -1,6 +1,8 @@
 #ifndef PROJECT_GAME_INTERACTION_USER_PROXY_H
 #define PROJECT_GAME_INTERACTION_USER_PROXY_H
 
+class CInteractionUserProxy;
+
 #include <cstdint>
 #include <array>
 #include <list>
@@ -21,10 +23,35 @@
 #include "project/Game/Interaction/InteractionGraph.h"
 #include "project/Game/Interaction/InteractionTrigger.h"
 #include "project/Game/Interaction/InteractionContext.h"
+#include "project/Game/Interaction/Interaction.h"
 #include "build/Win64/Final/engine/AvaCore/main/AvaCore/Types/HashString.h"
 #include "project/Game/Character/Character.h"
 
+class CEntryValidationInScope {
+    private: 
+    CInteractionUserProxy* m_User;
+    
+    public: 
+    CEntryValidationInScope(CInteractionUserProxy*);
+    ~CEntryValidationInScope();
+    void* __vecDelDtor(uint32_t);
+};
 
+class CInteractionMessageData {
+    public: 
+    TArray<CInteraction *> m_PotentialInteractions;
+    CInteractionUserProxy* m_User;
+
+    public: 
+    static const uint32_t INTERACTIONS_CAPACITY;
+    
+    public: 
+    CInteractionMessageData(const CInteractionMessageData&);
+    CInteractionMessageData(CInteractionUserProxy*);
+    ~CInteractionMessageData();
+    CInteractionMessageData& operator=(const CInteractionMessageData&);
+    void* __vecDelDtor(uint32_t);
+};
 
 class CInteractionUserProxy {
     public:
@@ -32,6 +59,13 @@ class CInteractionUserProxy {
         public:
         TArray<int> m_MovementIdentifiers;
         TArray<int> m_ActEvents;
+
+        public: 
+        SInteractionGraphMovementToActMapping(const CInteractionUserProxy::SInteractionGraphMovementToActMapping&);
+        SInteractionGraphMovementToActMapping();
+        ~SInteractionGraphMovementToActMapping();
+        CInteractionUserProxy::SInteractionGraphMovementToActMapping& operator=(const CInteractionUserProxy::SInteractionGraphMovementToActMapping&);
+        void* __vecDelDtor(uint32_t);
     };
 
     enum EIGraphUserState : int32_t {
@@ -83,8 +117,67 @@ class CInteractionUserProxy {
     private: 
     static const uint32_t VALID_ENTRIES_CAPACITY;
 
-    public:
+    public: CInteractionUserProxy(const CInteractionUserProxy&);
+    CInteractionUserProxy();
+    virtual ~CInteractionUserProxy();
+    void Update(float);
+    void InitTransform();
+    void GetWorldTransform(CMatrix4f&);
+    void EnterGraph(CInteractionGraphEntry*);
+    void ExitGraph(CInteractionGraph*);
+    void EnterNode(CInteractionGraphNode*);
+    void EnterTransition(CInteractionGraphTransition*, const CHashString&);
+    void EnterExit(CInteractionGraphExit*);
+    void UpdateTransitionLerp();
+    void UpdateTransitionScaledMotion(float);
+    void UpdateTransitionAndRotationScaledMotion(float);
+    void UpdateOffsetMotion(float);
+    bool SendEventsMappedToMovementIdentifier(int32_t);
+    bool GetEventIdFromMovementIdentifier(int32_t, int32_t&) const;
+    void AddMovementIdentifierToActMapping(int32_t, int32_t);
+    void ClearMovementIdentifierToActMapping();
+    bool IsAttachedToGraph() const;
     CInteractionContext* GetContext() const;
+    CInteractionGraph* GetGraph() const;
+    uint32_t GetCurrentNodeIndex() const;
+    void SetGraphUserState(CInteractionUserProxy::EIGraphUserState);
+    CInteractionUserProxy::EIGraphUserState GetGraphUserState() const;
+    const TArray<CInteractionGraphEntry *>& GetAvailableEntries() const;
+    const TArray<CInteractionGraphEntry *>& GetValidEntries();
+    bool ValidationAddEntry(CInteractionGraphEntry*);
+    void AddValidEntry(CInteractionGraphEntry*);
+    void ClearValidEntries();
+    const TArray<CInteractionGraphEntry *>& GetPreviousValidEntries() const;
+    void ClearPreviousValidEntries();
+    bool InEntryValidation() const;
+    void SetNamedFailEntry(const char*);
+    uint32_t GetAndClearNamedFailEntry();
+    void TryReEnter(const CHashString&);
+    void ActivateReEnter();
+    void DeActivateReEnter();
+
+    private: 
+    void OnLeaveEntryTransitionOrExit();
+    void SetEntryValidationBegin();
+    void SetEntryValidationEnd();
+    void RemoveValidEntry(CInteractionGraphEntry*);
+    void ClearValidEntriesInternal();
+
+    public: 
+    CInteractionUserProxy& operator=(const CInteractionUserProxy&);
+    void __local_vftable_ctor_closure();
+    virtual void* __vecDelDtor(uint32_t);
+};
+
+namespace NEvent {
+    template <typename T>
+    struct SEventArgumentTraits {
+        public: 
+        static uint32_t Size(T);
+        static void Copy(void*, T);
+        static const void* Immediate(T&);
+        static T From(const void*);
+    };
 };
 
 #endif

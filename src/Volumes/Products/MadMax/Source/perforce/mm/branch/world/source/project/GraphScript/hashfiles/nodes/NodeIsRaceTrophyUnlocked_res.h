@@ -1,1 +1,4 @@
-// Workspace file: NodeIsRaceTrophyUnlocked_res.h
+#ifndef PROJECT_GRAPHSCRIPT_NODE_IS_RACE_TROPHY_UNLOCKED_H
+#define PROJECT_GRAPHSCRIPT_NODE_IS_RACE_TROPHY_UNLOCKED_H
+
+#endif

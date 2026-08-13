@@ -1,1 +1,4 @@
-// Workspace file: NodeTimeLock_res.h
+#ifndef PROJECT_GRAPHSCRIPT_NODE_TIME_LOCK_H
+#define PROJECT_GRAPHSCRIPT_NODE_TIME_LOCK_H
+
+#endif
