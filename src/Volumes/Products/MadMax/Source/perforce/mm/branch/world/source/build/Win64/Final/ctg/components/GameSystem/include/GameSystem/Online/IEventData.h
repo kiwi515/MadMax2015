@@ -1,6 +1,8 @@
 #ifndef COMPONENT_I_EVENT_DATA_H
 #define COMPONENT_I_EVENT_DATA_H
 
+#include "build/Win64/Final/engine/AvaCore/main/AvaCore/Types/HashString.h"
+
 namespace NMetricsEvent {
 
     class IEventData {
