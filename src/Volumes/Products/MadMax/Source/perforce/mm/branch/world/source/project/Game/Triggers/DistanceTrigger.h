@@ -1,1 +1,4 @@
-// Workspace file: DistanceTrigger.h
+#ifndef PROJECT_GAME_DISTANCE_TRIGGER_H
+#define PROJECT_GAME_DISTANCE_TRIGGER_H
+
+#endif

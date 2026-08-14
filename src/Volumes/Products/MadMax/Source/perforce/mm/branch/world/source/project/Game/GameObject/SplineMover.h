@@ -1,1 +1,4 @@
-// Workspace file: SplineMover.h
+#ifndef PROJECT_GAME_SPLINE_MOVER_H
+#define PROJECT_GAME_SPLINE_MOVER_H
+
+#endif

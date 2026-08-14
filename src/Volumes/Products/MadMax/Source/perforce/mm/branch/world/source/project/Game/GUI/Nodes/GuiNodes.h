@@ -1,1 +1,4 @@
-// Workspace file: GuiNodes.h
+#ifndef PROJECT_GAME_GUI_NODES_H
+#define PROJECT_GAME_GUI_NODES_H
+
+#endif

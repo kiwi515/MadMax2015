@@ -1,1 +1,4 @@
-// Workspace file: PfxDebugger.h
+#ifndef COMPONENT_PFX_DEBUGGER_H
+#define COMPONENT_PFX_DEBUGGER_H
+
+#endif

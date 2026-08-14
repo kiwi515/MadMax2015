@@ -1,1 +1,6 @@
-// Workspace file: SequenceDebugObject.h
+#ifndef PROJECT_GAME_SEQUENCE_DEBUG_OBJECT_H
+#define PROJECT_GAME_SEQUENCE_DEBUG_OBJECT_H
+
+
+
+#endif

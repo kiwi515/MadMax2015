@@ -167,7 +167,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/include/Xvm/xvm_debugger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/source/common/xvm_debugger_utils.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/source/common/xvm_platform_64bit.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/source/common/xvm_vm_debugger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/include/hkaCustom/CustomClasses.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/include/hkaCustom/hkaBoneIndexMap.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/projects/shadercompile/main/build/Win64/Final/common/ShaderLibrary/shader_library_format.h
@@ -382,7 +381,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/RaycastSounds.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/RoadMover.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/RopeObject.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/SplineMover.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/SplineObjectGame.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/StateContainerStatesHarpoon.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/../../../project/Game/GameObject/StealthHandler.h
@@ -1279,7 +1277,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Atmosphere/SkyGradient.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Atmosphere/StarsRenderBlock.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Atmosphere/Sun.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Debug/PfxDebugger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Landscape/ClimateZone.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Landscape/LandscapeManager.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/ctg/components/System/include/System/Landscape/Map/MapTexture.h
@@ -1576,7 +1573,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GUI/MapStreamer.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GUI/Nodes/GUINodesHelper.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GUI/Nodes/GuiNodeFunctionMap.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GUI/Nodes/GuiNodes.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GUI/TooltipManager.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Game.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/GameDirector.h
@@ -1814,7 +1810,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/PhysicsCollisionGroup.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/RayCasterObject.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/RigidObject.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/ScaledRigidObject.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/SkeletalAnimatedObject.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/TrajectoryWarning.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/PhysicsObjects/Vegetation/BreakableTreePatch.h
@@ -1877,13 +1872,11 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/ScriptGameObjectModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/ScriptProperties.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/ScriptPropertiesModule.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/SoundScriptingModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/UpgradeableValuesManagerModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/VehicleManagerModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/VehicleModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/VisiblePlayerUpgradesModule.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Scripting/XlsBookModule.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Sequence2/SequenceDebugObject.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Sequence2/SequenceObject2.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Settings/GpuPresets.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Settings/SettingsManager.h
@@ -1907,7 +1900,6 @@
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/TrackedWorldObjects/WorldObjectTracker.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/ButtonTrigger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/CountTrigger.h
-/Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/DistanceTrigger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/EventTrigger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/ImpactPredictionTrigger.h
 /Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/source/project/Game/Triggers/LookAtTrigger.h

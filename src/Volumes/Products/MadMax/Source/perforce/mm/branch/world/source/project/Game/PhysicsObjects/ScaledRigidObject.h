@@ -1,1 +1,4 @@
-// Workspace file: ScaledRigidObject.h
+#ifndef PROJECT_GAME_SCALED_RIGID_OBJECT_H
+#define PROJECT_GAME_SCALED_RIGID_OBJECT_H
+
+#endif
