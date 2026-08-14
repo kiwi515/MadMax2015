@@ -1,6 +1,13 @@
 #ifndef PROJECT_GAME_MISSION_H
 #define PROJECT_GAME_MISSION_H
 
+struct SMissionObjective;
+struct SMissionData;
+class CSaveContainer;
+namespace NMissionSystem {
+    enum EMissionEventType : int;
+}
+
 #include "build/Win64/Final/ctg/components/Base/include/Base/Misc/Event.h"
 #include "project/Game/Mission/adf/mission_types.h"
 #include "build/Win64/Final/ctg/components/GameSystem/include/GameSystem/Online/EventStructs_gen.h"

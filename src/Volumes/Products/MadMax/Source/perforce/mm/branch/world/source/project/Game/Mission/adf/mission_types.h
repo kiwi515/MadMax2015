@@ -1,8 +1,6 @@
 #ifndef PROJECT_GAME_MISSION_TYPES_H
 #define PROJECT_GAME_MISSION_TYPES_H
 
-struct SMissionObjective;
-
 #include <cstdint>
 #include <array>
 #include <list>
@@ -14,6 +12,8 @@ struct SMissionObjective;
 #include <vector>
 
 struct SMissionData {
+    struct SMissionObjective;
+
     struct ArrayDependencies {
         public: 
         uint32_t* m_Data;
