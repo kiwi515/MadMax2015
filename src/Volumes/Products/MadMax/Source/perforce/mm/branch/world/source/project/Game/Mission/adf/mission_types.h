@@ -11,9 +11,22 @@
 #include <utility>
 #include <vector>
 
-struct SMissionData {
-    struct SMissionObjective;
+struct SMissionObjective {
+    public: 
+    uint32_t m_EventHash[6];
+    const char* m_IDString;
+    uint32_t m_ID;
+    uint32_t m_LocalizationKey;
+    unsigned char m_ObjectiveIndex;
+    unsigned char m_Activated;
+    unsigned char m_Completed;
+    unsigned char m_GameProgression;
+    
+    public: 
+    void SetDefaultValues();
+};
 
+struct SMissionData {
     struct ArrayDependencies {
         public: 
         uint32_t* m_Data;
@@ -38,18 +51,6 @@ struct SMissionData {
         uint32_t GetSize() const;
     };
 
-    struct ArrayMissions {
-        public: 
-        SMissionData* m_Data;
-        uint32_t m_Count;
-        
-        public: 
-        uint64_t GetDataSize() const;
-        const SMissionData& operator[](uint32_t) const;
-        SMissionData& operator[](uint32_t);
-        uint32_t GetSize() const;
-    };
-
     struct ArrayObjectives {
         public: 
         SMissionObjective* m_Data;
@@ -60,44 +61,6 @@ struct SMissionData {
         const SMissionObjective& operator[](uint32_t) const;
         SMissionObjective& operator[](uint32_t);
         uint32_t GetSize() const;
-    };
-
-    struct SMissionCollection {
-        struct ArrayMissions {
-            public: 
-            SMissionData* m_Data;
-            uint32_t m_Count;
-            
-            public: 
-            uint64_t GetDataSize() const;
-            const SMissionData& operator[](uint32_t) const;
-            SMissionData& operator[](uint32_t);
-            uint32_t GetSize() const;
-        };
-        
-        public: 
-        SMissionCollection::ArrayMissions m_Missions;
-        const char* m_MissionScript;
-        const char* m_LocationName;
-        uint32_t m_MissionScriptHash;
-        
-        public: 
-        void SetDefaultValues();
-    };
-
-    struct SMissionObjective {
-        public: 
-        uint32_t m_EventHash[6];
-        const char* m_IDString;
-        uint32_t m_ID;
-        uint32_t m_LocalizationKey;
-        unsigned char m_ObjectiveIndex;
-        unsigned char m_Activated;
-        unsigned char m_Completed;
-        unsigned char m_GameProgression;
-        
-        public: 
-        void SetDefaultValues();
     };
 
     public: 
@@ -120,6 +83,41 @@ struct SMissionData {
     uint32_t m_RestartPointNameID;
     unsigned char m_Abandonable;
 
+    public: 
+    void SetDefaultValues();
+};
+
+struct ArrayMissions {
+    public: 
+    SMissionData* m_Data;
+    uint32_t m_Count;
+    
+    public: 
+    uint64_t GetDataSize() const;
+    const SMissionData& operator[](uint32_t) const;
+    SMissionData& operator[](uint32_t);
+    uint32_t GetSize() const;
+};
+
+struct SMissionCollection {
+    struct ArrayMissions {
+        public: 
+        SMissionData* m_Data;
+        uint32_t m_Count;
+        
+        public: 
+        uint64_t GetDataSize() const;
+        const SMissionData& operator[](uint32_t) const;
+        SMissionData& operator[](uint32_t);
+        uint32_t GetSize() const;
+    };
+    
+    public: 
+    SMissionCollection::ArrayMissions m_Missions;
+    const char* m_MissionScript;
+    const char* m_LocationName;
+    uint32_t m_MissionScriptHash;
+    
     public: 
     void SetDefaultValues();
 };

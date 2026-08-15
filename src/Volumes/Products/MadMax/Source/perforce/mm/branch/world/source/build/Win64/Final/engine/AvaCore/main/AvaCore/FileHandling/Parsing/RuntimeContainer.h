@@ -3,6 +3,7 @@
 
 struct SRuntimeContainer;
 struct SRuntimeContainerVariant;
+struct SObjectID;
 
 #include <cstdint>
 #include <array>

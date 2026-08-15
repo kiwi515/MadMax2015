@@ -1,6 +1,8 @@
 #ifndef LIB_RESOURCE_CACHE_H
 #define LIB_RESOURCE_CACHE_H
 
+class SResourceCache;
+
 #include <cstdint>
 #include <array>
 #include <list>
@@ -22,6 +24,19 @@ struct SResourceHandle {
 struct SResourceCache {
     public:
     char temp_padding[0xe8];
+};
+
+struct SResourceAllocator {
+    // public: 
+    // SPlatformAllocator* m_AllocStruct;
+    // SResourceAllocatorWrapper m_Wrapper;
+    
+    // public: 
+    // SResourceAllocator(SPlatformAllocator*);
+    // SResourceAllocator(void* (*)(void*, uint64_t, uint32_t), void (*)(void*, void*), uint32_t, void*);
+    // SResourceAllocator& operator=(const SResourceAllocator&);
+    // void* Alloc(uint64_t) const;
+    // void Dealloc(void*) const;
 };
 
 #endif
