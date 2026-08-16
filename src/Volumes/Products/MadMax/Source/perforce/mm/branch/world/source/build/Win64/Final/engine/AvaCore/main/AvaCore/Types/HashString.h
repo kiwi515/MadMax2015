@@ -22,7 +22,7 @@ class CHashString {
     CHashString(uint32_t, const char*);
     CHashString(CHashString&&);
     CHashString(const CHashString&);
-    CHashString(uint32_t);
+    CHashString(uint32_t hash) : m_Hash(hash) {};
     CHashString();
     CHashString& operator=(const std::basic_string<char,std::char_traits<char>,std::allocator<char> >&);
     CHashString& operator=(const char*);

@@ -102,4 +102,28 @@ class Quest : public SProgressionBaseData {
     static CHashString ClassId();
 };
 
+class OpenWorldProgressionEvent : public SEventBaseData {
+    public: 
+    uint32_t activity_tag;
+    uint32_t location_item_type;
+    uint32_t total_world_count;
+    uint32_t total_active_count;
+  
+    public: 
+    virtual CHashString InstanceClassId() const;
+    virtual bool IsInstanceOf(CHashString) const;
+    virtual SEventBaseData* Clone() const;
+    virtual const char* EventType() const;
+    virtual const char* EventName() const;
+    virtual float GetNumericalField(CHashString) const;
+    virtual uint32_t GetIntegerField(CHashString, bool&) const;
+    virtual int32_t GetSignedIntegerField(CHashString, bool&) const;
+    OpenWorldProgressionEvent(const OpenWorldProgressionEvent& other);
+    OpenWorldProgressionEvent();
+    virtual ~OpenWorldProgressionEvent();
+    OpenWorldProgressionEvent& operator=(const OpenWorldProgressionEvent&);
+
+    static CHashString ClassId();
+};
+
 #endif
