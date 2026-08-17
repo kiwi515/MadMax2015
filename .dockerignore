@@ -1,0 +1,8 @@
+# Build artifacts
+build/
+.ninja_deps
+.ninja_log
+.ninja_lock
+build.ninja
+compile_commands.json
+objdiff.json
