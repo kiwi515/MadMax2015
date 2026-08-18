@@ -32,6 +32,16 @@ cpp_compiler: g++
 cflags_pedantic: ["-Werror=unused"]
 
 # ========================================================================#
+# Compiler flags to apply across all code.
+#
+# ========================================================================#
+cflags_common:
+  [
+    "-I/mm/src/Volumes/Products/MadMax/source/perforce/mm/branch/world/source",
+    "-I/mm/src/Volumes/products/madmax/source/perforce/ctg",
+  ]
+
+# ========================================================================#
 # Compiler flags to apply across all code in debug builds.
 #
 # ========================================================================#
