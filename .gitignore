@@ -22,6 +22,8 @@ build/
 build.ninja
 compile_commands.json
 objdiff.json
+# Clangd artifacts
+.cache/
 
 #=========================================================#
 # Temporary
