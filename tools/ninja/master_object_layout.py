@@ -48,7 +48,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Feral3D",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/Feral3D/",
+            prefix="Volumes/Libraries/Feral/Feral3D/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -126,7 +126,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="FeralLib",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/FeralLib/",
+            prefix="Volumes/Libraries/Feral/FeralLib/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -299,7 +299,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="FeralNet",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/FeralNet/",
+            prefix="Volumes/Libraries/Feral/FeralNet/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -441,7 +441,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="GameLib",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/GameLib/",
+            prefix="Volumes/Libraries/Feral/GameLib/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -480,7 +480,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="GameShell",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/GameShell/",
+            prefix="Volumes/Libraries/Feral/GameShell/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -535,7 +535,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Iceworks",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/Iceworks/",
+            prefix="Volumes/Libraries/Feral/Iceworks/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -592,7 +592,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="IndirectX",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/IndirectX/",
+            prefix="Volumes/Libraries/Feral/IndirectX/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -792,7 +792,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Macdoze",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Feral/Macdoze/",
+            prefix="Volumes/Libraries/Feral/Macdoze/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -922,7 +922,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="mm",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/",
+            prefix="Volumes/Products/MadMax/Source/perforce/mm/branch/world/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -986,7 +986,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="mm_fragments",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/mm/branch/world/",
+            prefix="Volumes/Products/MadMax/Source/perforce/mm/branch/world/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1080,7 +1080,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="FMOD",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/FMOD/v4.44.46/",
+            prefix="Volumes/Libraries/FMOD/v4.44.46/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1306,7 +1306,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Breakpad",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Google/Breakpad/",
+            prefix="Volumes/Libraries/Google/Breakpad/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1341,7 +1341,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="ForeignPackfileUtils",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/Havok/Feral/ForeignPackfileUtils/",
+            prefix="Volumes/Libraries/Havok/Feral/ForeignPackfileUtils/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1361,7 +1361,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="libSquish",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/libSquish/squish-1.10/",
+            prefix="Volumes/Libraries/libSquish/squish-1.10/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1389,7 +1389,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="MiniUPnP",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/MiniUPnP/MiniUPnPc-1.9/",
+            prefix="Volumes/Libraries/MiniUPnP/MiniUPnPc-1.9/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1419,7 +1419,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="mojoshader",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/mojoshader/",
+            prefix="Volumes/Libraries/mojoshader/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1436,7 +1436,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Bink",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/RAD/Bink2.4c/",
+            prefix="Volumes/Libraries/RAD/Bink2.4c/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1466,7 +1466,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Nano",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/refNum/Nano/Library/",
+            prefix="Volumes/Libraries/refNum/Nano/Library/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1585,7 +1585,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="StuntMan",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/StuntMan/StuntMan-1.2.8/",
+            prefix="Volumes/Libraries/StuntMan/StuntMan-1.2.8/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1619,7 +1619,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="libUDT",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/UDT/libUDT-4.11/",
+            prefix="Volumes/Libraries/UDT/libUDT-4.11/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1650,7 +1650,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="nestegg",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Libraries/webm/nestegg/",
+            prefix="Volumes/Libraries/webm/nestegg/",
             flags=[
                 "-mtune=generic",
                 "-march=x86-64",
@@ -1670,7 +1670,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="FeralMM",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Feral/",
+            prefix="Volumes/Products/MadMax/Feral/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1694,7 +1694,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="calltree",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/3rdparty/calltree/",
+            prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/calltree/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1714,7 +1714,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="fr_hydra", # "Feral"?
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/3rdparty/fr_hydra/",
+            prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/fr_hydra/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1764,7 +1764,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="fr_wbnc", # "Feral"?
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/3rdparty/fr_wbnc/",
+            prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/fr_wbnc/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1838,7 +1838,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="rev",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/3rdparty/rev/",
+            prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/rev/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1866,7 +1866,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="ADF",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/ADF/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/ADF/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1891,7 +1891,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="BFBC",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/BFBC/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/BFBC/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1911,7 +1911,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Console",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1932,7 +1932,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="CoreLibs",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1965,7 +1965,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="CpuFragment",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/CpuFragment/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/CpuFragment/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -1986,7 +1986,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Effect",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Effect/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Effect/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2037,7 +2037,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="GraphicsDevice",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/GraphicsDevice/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphicsDevice/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2063,7 +2063,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="GraphScript",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/GraphScript/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphScript/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2098,7 +2098,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="GUI_XVM",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/GUI_XVM/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GUI_XVM/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2131,7 +2131,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="hkaCustom",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2152,7 +2152,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="IO",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/IO/branch/35.0.3/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/IO/branch/35.0.3/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2186,7 +2186,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Memory",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Memory/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Memory/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2206,7 +2206,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Message",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Message/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Message/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2227,7 +2227,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Network",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Network/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Network/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2252,7 +2252,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Render",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Render/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Render/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2274,7 +2274,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="ResourceCache",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/ResourceCache/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/ResourceCache/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2294,7 +2294,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="RoadGraph",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/RoadGraph/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/RoadGraph/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2315,7 +2315,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="SoundModule",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/SoundModule/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/SoundModule/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2340,7 +2340,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="TerrainSampling",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/TerrainSampling/branch/13.0.0/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/TerrainSampling/branch/13.0.0/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2361,7 +2361,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="TM2",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/TM2/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/TM2/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",
@@ -2381,7 +2381,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="Xvm2",
-            prefix="Volumes/BobSource/madmax/Companies/Feral/Development/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/",
             flags=[
                 *config.cflags_pedantic,
                 "-mtune=generic",

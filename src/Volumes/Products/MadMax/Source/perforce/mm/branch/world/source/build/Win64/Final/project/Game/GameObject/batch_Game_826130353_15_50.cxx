@@ -1,476 +1,483 @@
-// #include <cstdint>
-// #include <array>
-// #include <list>
-// #include <map>
-// #include <memory>
-// #include <string>
-// #include <unordered_map>
-// #include <utility>
-// #include <vector>
+#include <cstdint>
+#include <array>
+#include <list>
+#include <map>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 
-// class CGameObject : public CRtti {
-//     public:
-//     virtual unsigned long long GetObjectID() const;
-//     virtual void PostInit();
+class CRtti {
+    public:
+    virtual ~CRtti();
+};
 
-//     CGameObject();
-//     virtual ~CGameObject();
-// };
 
-// class CEventHandler {
-//     public:
-//     CEventHandler();
-//     virtual ~CEventHandler();
-// };
+class CGameObject : public CRtti {
+    public:
+    virtual unsigned long long GetObjectID() const;
+    virtual void PostInit();
 
-// class CSaveInfo {
-//     public:
-//     std::uint32_t m_WorldSaveIndex;
+    CGameObject();
+    virtual ~CGameObject();
+};
 
-//     CSaveInfo();
-//     virtual ~CSaveInfo();
-// };
+class CEventHandler {
+    public:
+    CEventHandler();
+    virtual ~CEventHandler();
+};
 
-// class CMatrix4f {
-//     public:
-//     char padding[64];
+class CSaveInfo {
+    public:
+    std::uint32_t m_WorldSaveIndex;
 
-//     static CMatrix4f IDENTITY;
-// };
+    CSaveInfo();
+    virtual ~CSaveInfo();
+};
 
-// class CDataSaveHandler {
-//     public:
-//     void* AllocateRAWData(unsigned long long objectID, unsigned long size);
-//     void* GetAllocatedRAWDataPtr(unsigned long long objectID) const;
-// };
+class CMatrix4f {
+    public:
+    char padding[64];
 
-// class CSaveBitStorage {
-//     std::uint64_t* m_Hashes;
-//     std::uint64_t* m_Bits;
-//     std::uint32_t m_Size;
-//     std::uint32_t m_AmountStoredHash;
-// };
+    static CMatrix4f IDENTITY;
+};
 
-// class CSaveContext {
-//     public:
-//     CDataSaveHandler m_DataHandler;
-//     CSaveBitStorage m_BitStorage;
-//     std::uint32_t m_Version;
-// };
+class CDataSaveHandler {
+    public:
+    void* AllocateRAWData(unsigned long long objectID, unsigned long size);
+    void* GetAllocatedRAWDataPtr(unsigned long long objectID) const;
+};
 
-// struct SUpgradeableValue {
+class CSaveBitStorage {
+    std::uint64_t* m_Hashes;
+    std::uint64_t* m_Bits;
+    std::uint32_t m_Size;
+    std::uint32_t m_AmountStoredHash;
+};
 
-// };
+class CSaveContext {
+    public:
+    CDataSaveHandler m_DataHandler;
+    CSaveBitStorage m_BitStorage;
+    std::uint32_t m_Version;
+};
 
-// class CBonusDataContainer {
+struct SUpgradeableValue {
 
-// };
+};
 
-// struct TEventHandle {
-//     uint64_t dummy;
-// };
+class CBonusDataContainer {
 
-// namespace NEvent {
-//     struct CEventData {
-//         uint64_t m_Type;
-//         const void* m_Pointers[5];
-//     };
+};
 
-//     class CEventBase {
-//         public:
-//         TEventHandle* m_EventImpl;
-//         CEventBase();
-//         virtual ~CEventBase();
-//     };
+struct TEventHandle {
+    uint64_t dummy;
+};
 
-//     class CBaseSendEvent {
-//         public:
-//         CEventBase* m_Impl;
+namespace NEvent {
+    struct CEventData {
+        uint64_t m_Type;
+        const void* m_Pointers[5];
+    };
 
-//         CBaseSendEvent();
-//         virtual ~CBaseSendEvent();
+    class CEventBase {
+        public:
+        TEventHandle* m_EventImpl;
+        CEventBase();
+        virtual ~CEventBase();
+    };
 
-//         void Send(const CEventData& data) const;
-//     };
+    class CBaseSendEvent {
+        public:
+        CEventBase* m_Impl;
 
-//     class CEventHandler {
+        CBaseSendEvent();
+        virtual ~CBaseSendEvent();
 
-//     };
+        void Send(const CEventData& data) const;
+    };
 
-//     class CEventImpl {
-//         public:
-//     };
-// };
+    class CEventHandler {
 
-// template <typename... Args>
-// class CEventWithArguments {
-//     public:
+    };
 
-// };
+    class CEventImpl {
+        public:
+    };
+};
 
-// template <typename... Args>
-// class CReceiveEvent : public CEventWithArguments<Args...> {
-//     public:
-//     static const uint64_t s_Type;
-//     NEvent::CEventBase m_Impl;
-// };
+template <typename... Args>
+class CEventWithArguments {
+    public:
 
-// template <typename... Args>
-// class CSendEvent : public NEvent::CBaseSendEvent {
-//     public:
-//     static const uint64_t s_Type = 0xFFFFFFFFFF;
+};
 
-//     void Send() {
-//         NEvent::CEventData data;
+template <typename... Args>
+class CReceiveEvent : public CEventWithArguments<Args...> {
+    public:
+    static const uint64_t s_Type;
+    NEvent::CEventBase m_Impl;
+};
 
-//         data.m_Type = s_Type;
-//         data.m_Pointers[0] = nullptr;
-//         data.m_Pointers[1] = nullptr;
-//         data.m_Pointers[2] = nullptr;
-//         data.m_Pointers[3] = nullptr;
+template <typename... Args>
+class CSendEvent : public NEvent::CBaseSendEvent {
+    public:
+    static const uint64_t s_Type = 0xFFFFFFFFFF;
 
-//         NEvent::CBaseSendEvent::Send(data);
-//     };
-// };
+    void Send() {
+        NEvent::CEventData data;
 
-// struct SObjectID {
-//     std::uint64_t id;
-// };
+        data.m_Type = s_Type;
+        data.m_Pointers[0] = nullptr;
+        data.m_Pointers[1] = nullptr;
+        data.m_Pointers[2] = nullptr;
+        data.m_Pointers[3] = nullptr;
 
-// class CHashString {
-//     public:
-//     uint32_t m_Hash;
-// };
+        NEvent::CBaseSendEvent::Send(data);
+    };
+};
+
+struct SObjectID {
+    std::uint64_t id;
+};
+
+class CHashString {
+    public:
+    uint32_t m_Hash;
+};
 
 // static CHashString item_name_hash[4];
 // static int32_t OBJECT_IDS_KEY;
 
-// class CRuntimeContainer {
+class CRuntimeContainer {
 
-// };
+};
 
-// class SGameObjectSetPropertiesContext {
+class SGameObjectSetPropertiesContext {
 
-// };
+};
 
-// class Base {
-//     public:
-//     class IAppSystem {
+class Base {
+    public:
+    class IAppSystem {
 
-//     };
-// };
+    };
+};
 
-// template <typename T>
-// class CAvaSingle {
-//     public:
-//     static T* Instance;
-// };
+template <typename T>
+class CAvaSingle {
+    public:
+    static T* Instance;
+};
 
-// class CUpgradeableValuesManager : public CAvaSingle<CUpgradeableValuesManager>, public Base::IAppSystem, public NEvent::CEventHandler {
-//     private:
-//     std::vector<SUpgradeableValue, std::allocator<SUpgradeableValue>> m_Values;
-//     CHashString m_SegmentHealth;
-//     CBonusDataContainer m_BonusContainer;
-//     CReceiveEvent<void, void, void, void, void> m_GuiCheckBonusEvent;
-//     CReceiveEvent<void, void, void, void, void> m_GriffaDespawnedEvent;
-//     CReceiveEvent<void, void, void, void, void> m_GriffaWeaponPickupEvent;
+class CUpgradeableValuesManager : public CAvaSingle<CUpgradeableValuesManager>, public Base::IAppSystem, public NEvent::CEventHandler {
+    private:
+    std::vector<SUpgradeableValue, std::allocator<SUpgradeableValue>> m_Values;
+    CHashString m_SegmentHealth;
+    CBonusDataContainer m_BonusContainer;
+    CReceiveEvent<void, void, void, void, void> m_GuiCheckBonusEvent;
+    CReceiveEvent<void, void, void, void, void> m_GriffaDespawnedEvent;
+    CReceiveEvent<void, void, void, void, void> m_GriffaWeaponPickupEvent;
 
-//     public:
-//     float GetFloat(CHashString name_id);
-// };
+    public:
+    float GetFloat(CHashString name_id);
+};
 
 
 
-// class CLootBag : public CGameObject, public CEventHandler {
-//     public:
-//         char padding[0xd0];
+class CLootBag : public CGameObject, public CEventHandler {
+    public:
+        char padding[0xd0];
 
-//         CMatrix4f m_WorldMatrix;
+        CMatrix4f m_WorldMatrix;
 
-//         CSaveInfo m_SaveInfo;
+        CSaveInfo m_SaveInfo;
 
-//         SObjectID m_EconomyResourceId;
+        SObjectID m_EconomyResourceId;
 
-//         CReceiveEvent<void, void, void, void, void> m_CheckLootEvent;
-//         CReceiveEvent<void, void, void, void, void> m_CollectLootEvent;
-//         CReceiveEvent<void, void, void, void, void> m_EnableEvent;
-//         CReceiveEvent<void, void, void, void, void> m_DisableEvent;
+        CReceiveEvent<void, void, void, void, void> m_CheckLootEvent;
+        CReceiveEvent<void, void, void, void, void> m_CollectLootEvent;
+        CReceiveEvent<void, void, void, void, void> m_EnableEvent;
+        CReceiveEvent<void, void, void, void, void> m_DisableEvent;
 
-//         CSendEvent<void, void, void, void, void> m_HasLootEvent;
-//         CSendEvent<void, void, void, void, void> m_HasZeroLootEvent;
-//         CSendEvent<void, void, void, void, void> m_IsEmptyEvent;
-//         CSendEvent<void, void, void, void, void> m_ExtraItemCollectedEvent;
+        CSendEvent<void, void, void, void, void> m_HasLootEvent;
+        CSendEvent<void, void, void, void, void> m_HasZeroLootEvent;
+        CSendEvent<void, void, void, void, void> m_IsEmptyEvent;
+        CSendEvent<void, void, void, void, void> m_ExtraItemCollectedEvent;
 
-//         std::uint32_t m_TotalItemCount;
+        std::uint32_t m_TotalItemCount;
 
-//         float m_BonusPointsAccumulated;
+        float m_BonusPointsAccumulated;
 
-//         std::uint32_t m_DefaultLootItems[4];
+        std::uint32_t m_DefaultLootItems[4];
         
-//         float m_SlotMultiplier[4];
+        float m_SlotMultiplier[4];
 
-//         bool m_Enabled;
-//         bool m_DynamicContent;
-//         bool m_HasBeenGenerated;
-//         bool m_HasScrap;
-//         bool m_BonusCollected;
+        bool m_Enabled;
+        bool m_DynamicContent;
+        bool m_HasBeenGenerated;
+        bool m_HasScrap;
+        bool m_BonusCollected;
 
-//         CLootBag();
-//         virtual ~CLootBag();
+        CLootBag();
+        virtual ~CLootBag();
 
-//         virtual CSaveInfo& GetSaveInfo();
-//         virtual bool HasLocalTransform();
-//         virtual bool GetRequiredUpdates();
-//         virtual bool CheckHasLoot() const;
-//         virtual CMatrix4f& GetLocalTransform();
-//         virtual bool GetTransform(CMatrix4f* outMatrix);
-//         virtual void SetTransform(const CMatrix4f& inMatrix);
-//         virtual const char* GetKlassName() const;
-//         virtual void SetLocalTransform(const CMatrix4f& mat);
-//         virtual void Save(CSaveContext& ctx);
-//         virtual void Load(const CSaveContext& ctx);
-//         virtual unsigned long long GetObjectID() const;
-//         virtual void PostInit();
-//         virtual int GetTotalDefaultQuantity() const;
-//         virtual void CalculateBonusLootPoints(float f);
-//         virtual bool GenerateLootUsingDefaultValues(std::vector<unsigned int, std::allocator<unsigned int> >& dummy);
-//         virtual void GetQuantityValues(CHashString const& hash, unsigned int& a, unsigned int& b);
+        virtual CSaveInfo& GetSaveInfo();
+        virtual bool HasLocalTransform();
+        virtual bool GetRequiredUpdates();
+        virtual bool CheckHasLoot() const;
+        virtual CMatrix4f& GetLocalTransform();
+        virtual bool GetTransform(CMatrix4f* outMatrix);
+        virtual void SetTransform(const CMatrix4f& inMatrix);
+        virtual const char* GetKlassName() const;
+        virtual void SetLocalTransform(const CMatrix4f& mat);
+        virtual void Save(CSaveContext& ctx);
+        virtual void Load(const CSaveContext& ctx);
+        virtual unsigned long long GetObjectID() const;
+        virtual void PostInit();
+        virtual int GetTotalDefaultQuantity() const;
+        virtual void CalculateBonusLootPoints(float f);
+        virtual bool GenerateLootUsingDefaultValues(std::vector<unsigned int, std::allocator<unsigned int> >& dummy);
+        virtual void GetQuantityValues(CHashString const& hash, unsigned int& a, unsigned int& b);
 
-//         protected: 
-//         bool CheckHasInventorySpace();
+        protected: 
+        bool CheckHasInventorySpace();
 
-//         public:
-//         virtual void CalculateWeightValuesForAmmoTypes(std::vector<float, std::allocator<float> >& a, std::vector<float, std::allocator<float> >& b);
-//         virtual void AddToPlayerInventory(CHashString const& hash, int b);
-//         virtual void CollectBonusItemsIfAny();
-//         virtual void CollectLoot(std::vector<unsigned int, std::allocator<unsigned int> > const& a);
-//         virtual bool GenerateLootDynamically(std::vector<unsigned int, std::allocator<unsigned int> >& a);
-//         virtual bool GenerateLoot(std::vector<unsigned int, std::allocator<unsigned int> >& a);
-//         virtual void HandleEvent(NEvent::CEventImpl const*, NEvent::CEventData const&);
-//         virtual void SetProperties(CRuntimeContainer const&, SGameObjectSetPropertiesContext*);
-// };
+        public:
+        virtual void CalculateWeightValuesForAmmoTypes(std::vector<float, std::allocator<float> >& a, std::vector<float, std::allocator<float> >& b);
+        virtual void AddToPlayerInventory(CHashString const& hash, int b);
+        virtual void CollectBonusItemsIfAny();
+        virtual void CollectLoot(std::vector<unsigned int, std::allocator<unsigned int> > const& a);
+        virtual bool GenerateLootDynamically(std::vector<unsigned int, std::allocator<unsigned int> >& a);
+        virtual bool GenerateLoot(std::vector<unsigned int, std::allocator<unsigned int> >& a);
+        virtual void HandleEvent(NEvent::CEventImpl const*, NEvent::CEventData const&);
+        virtual void SetProperties(CRuntimeContainer const&, SGameObjectSetPropertiesContext*);
+};
 
-// CSaveInfo& CLootBag::GetSaveInfo()
-// {
-//     return this->m_SaveInfo;
-// }
+CSaveInfo& CLootBag::GetSaveInfo()
+{
+    return this->m_SaveInfo;
+}
 
-// bool CLootBag::HasLocalTransform()
-// {
-//     return false;
-// }
 
-// bool CLootBag::GetRequiredUpdates()
-// {
-//     return false;
-// }
+bool CLootBag::HasLocalTransform()
+{
+    return false;
+}
 
-// bool CLootBag::CheckHasLoot() const
-// {
-//     return this->m_TotalItemCount != 0;
-// }
+bool CLootBag::GetRequiredUpdates()
+{
+    return false;
+}
 
-// CMatrix4f& CLootBag::GetLocalTransform()
-// {
-//     return CMatrix4f::IDENTITY;
-// }
+bool CLootBag::CheckHasLoot() const
+{
+    return this->m_TotalItemCount != 0;
+}
 
-// bool CLootBag::GetTransform(CMatrix4f* outMatrix) 
-// {
-//     *outMatrix = this->m_WorldMatrix;
-//     return true;
-// };
+CMatrix4f& CLootBag::GetLocalTransform()
+{
+    return CMatrix4f::IDENTITY;
+}
 
-// void CLootBag::SetTransform(const CMatrix4f& inMatrix)
-// {
-//     this->m_WorldMatrix = inMatrix;
-//     return;
-// }
+bool CLootBag::GetTransform(CMatrix4f* outMatrix) 
+{
+    *outMatrix = this->m_WorldMatrix;
+    return true;
+};
 
-// const char* CLootBag::GetKlassName() const
-// {
-//     return "CLootBag";
-// }
+void CLootBag::SetTransform(const CMatrix4f& inMatrix)
+{
+    this->m_WorldMatrix = inMatrix;
+    return;
+}
 
-// void CLootBag::SetLocalTransform(const CMatrix4f& mat)
-// {
-//     return;
-// }
+const char* CLootBag::GetKlassName() const
+{
+    return "CLootBag";
+}
 
-// void CLootBag::Save(CSaveContext& ctx)
-// {
-//     unsigned long long objectID = CGameObject::GetObjectID();
-//     void* buff = ctx.m_DataHandler.AllocateRAWData(objectID, sizeof(std::uint32_t));
+void CLootBag::SetLocalTransform(const CMatrix4f& mat)
+{
+    return;
+}
 
-//     *static_cast<std::uint32_t*>(buff) = this->m_TotalItemCount;
-// }
+void CLootBag::Save(CSaveContext& ctx)
+{
+    unsigned long long objectID = CGameObject::GetObjectID();
+    void* buff = ctx.m_DataHandler.AllocateRAWData(objectID, sizeof(std::uint32_t));
 
-// void CLootBag::Load(const CSaveContext& ctx)
-// {
-//     unsigned long long objectID = CGameObject::GetObjectID();
-//     const std::uint32_t* buff = static_cast<const std::uint32_t*>(ctx.m_DataHandler.GetAllocatedRAWDataPtr(objectID));
+    *static_cast<std::uint32_t*>(buff) = this->m_TotalItemCount;
+}
 
-//     if(buff) {
-//         this->m_TotalItemCount = *buff;
-//     }
-// }
+void CLootBag::Load(const CSaveContext& ctx)
+{
+    unsigned long long objectID = CGameObject::GetObjectID();
+    const std::uint32_t* buff = static_cast<const std::uint32_t*>(ctx.m_DataHandler.GetAllocatedRAWDataPtr(objectID));
 
-// void CLootBag::PostInit()
-// {
-//     CGameObject::PostInit();
+    if(buff) {
+        this->m_TotalItemCount = *buff;
+    }
+}
 
-//     if(this->m_TotalItemCount == 0) {
-//         this->m_HasZeroLootEvent.Send();
-//     } else {
-//         this->m_HasLootEvent.Send();
-//     }
-// }
+void CLootBag::PostInit()
+{
+    CGameObject::PostInit();
 
-// uint32_t HashString(const char *str) {
+    if(this->m_TotalItemCount == 0) {
+        this->m_HasZeroLootEvent.Send();
+    } else {
+        this->m_HasLootEvent.Send();
+    }
+}
 
-// };
+uint32_t HashString(const char *str) {
 
-// CLootBag::CLootBag() : CGameObject(), CEventHandler()
-// {
-//     this->m_TotalItemCount = 0;
+};
 
-//     this->m_DefaultLootItems[0] = 0;
-//     this->m_DefaultLootItems[1] = 0;
-//     this->m_DefaultLootItems[2] = 0;
-//     this->m_DefaultLootItems[3] = 0;
+CLootBag::CLootBag() : CGameObject(), CEventHandler()
+{
+    this->m_TotalItemCount = 0;
 
-//     this->m_Enabled = true;
-//     this->m_DynamicContent = false;
-//     this->m_HasBeenGenerated = false;
-//     this->m_HasScrap = false;
-//     this->m_BonusCollected = false;
-// }
+    this->m_DefaultLootItems[0] = 0;
+    this->m_DefaultLootItems[1] = 0;
+    this->m_DefaultLootItems[2] = 0;
+    this->m_DefaultLootItems[3] = 0;
 
-// CLootBag::~CLootBag()
-// {
+    this->m_Enabled = true;
+    this->m_DynamicContent = false;
+    this->m_HasBeenGenerated = false;
+    this->m_HasScrap = false;
+    this->m_BonusCollected = false;
+}
+
+CLootBag::~CLootBag()
+{
     
-// }
+}
 
-// int CLootBag::GetTotalDefaultQuantity() const
-// {
-//     return this->m_DefaultLootItems[0] + this->m_DefaultLootItems[1] +
-//         this->m_DefaultLootItems[2] + this->m_DefaultLootItems[3];
-// }
+int CLootBag::GetTotalDefaultQuantity() const
+{
+    return this->m_DefaultLootItems[0] + this->m_DefaultLootItems[1] +
+        this->m_DefaultLootItems[2] + this->m_DefaultLootItems[3];
+}
 
-// void CLootBag::CalculateBonusLootPoints(float f)
-// {
+void CLootBag::CalculateBonusLootPoints(float f)
+{
 
-// }
+}
 
-// bool CLootBag::GenerateLootUsingDefaultValues(std::vector<unsigned int, std::allocator<unsigned int> >& dummy)
-// {
+bool CLootBag::GenerateLootUsingDefaultValues(std::vector<unsigned int, std::allocator<unsigned int> >& dummy)
+{
 
-// }
+}
 
-// bool CLootBag::CheckHasInventorySpace() 
-// {
-//     int totalSpace = 0;
-//     CHashString* pHash = item_name_hash;
+bool CLootBag::CheckHasInventorySpace() 
+{
+    // int totalSpace = 0;
+    // CHashString* pHash = item_name_hash;
 
-//     do
-//     {
-//         unsigned int max_quantity;
-//         unsigned int cur_quantity;
-//         GetQuantityValues(*pHash, max_quantity, cur_quantity);
-//         int num = 0;
+    // do
+    // {
+    //     unsigned int max_quantity;
+    //     unsigned int cur_quantity;
+    //     GetQuantityValues(*pHash, max_quantity, cur_quantity);
+    //     int num = 0;
 
-//         if(cur_quantity < max_quantity)
-//         {
-//             num = max_quantity - cur_quantity;
-//         }
-//         totalSpace += num;
-//         pHash++;
-//     } while (pHash != (CHashString*)OBJECT_IDS_KEY);
+    //     if(cur_quantity < max_quantity)
+    //     {
+    //         num = max_quantity - cur_quantity;
+    //     }
+    //     totalSpace += num;
+    //     pHash++;
+    // } while (pHash != (CHashString*)OBJECT_IDS_KEY);
 
-//     return totalSpace != 0;
-// }
+    // return totalSpace != 0;
+}
 
-// void CLootBag::CalculateWeightValuesForAmmoTypes(std::vector<float, std::allocator<float> >& a, std::vector<float, std::allocator<float> >& b)
-// {
-//     if(this->m_BonusCollected != false)
-//     {
-//         return;
-//     }
+void CLootBag::CalculateWeightValuesForAmmoTypes(std::vector<float, std::allocator<float> >& a, std::vector<float, std::allocator<float> >& b)
+{
+    if(this->m_BonusCollected != false)
+    {
+        return;
+    }
 
-//     CHashString ammo_hash;
-//     ammo_hash.m_Hash = HashString("ammo_collector");
+    CHashString ammo_hash;
+    ammo_hash.m_Hash = HashString("ammo_collector");
 
-//     float f = CAvaSingle<CUpgradeableValuesManager>::Instance->GetFloat(ammo_hash);
-//     this->m_BonusPointsAccumulated = (f - 1.0) * b[0] + m_BonusPointsAccumulated;
+    float f = CAvaSingle<CUpgradeableValuesManager>::Instance->GetFloat(ammo_hash);
+    this->m_BonusPointsAccumulated = (f - 1.0) * b[0] + m_BonusPointsAccumulated;
 
-//     return;
-// }
+    return;
+}
 
-// void CLootBag::CollectBonusItemsIfAny()
-// {
+void CLootBag::CollectBonusItemsIfAny()
+{
 
-// }
+}
 
-// void CLootBag::CollectLoot(std::vector<unsigned int, std::allocator<unsigned int> > const& a)
-// {
+void CLootBag::CollectLoot(std::vector<unsigned int, std::allocator<unsigned int> > const& a)
+{
 
-// }
+}
 
-// bool CLootBag::GenerateLootDynamically(std::vector<unsigned int, std::allocator<unsigned int> >& a)
-// {
-//     return false;
-// }
+bool CLootBag::GenerateLootDynamically(std::vector<unsigned int, std::allocator<unsigned int> >& a)
+{
+    return false;
+}
 
-// bool CLootBag::GenerateLoot(std::vector<unsigned int, std::allocator<unsigned int> >& loot)
-// {
-//     bool hasLoot = false;
-//     uint32_t* pData = loot.data();
+bool CLootBag::GenerateLoot(std::vector<unsigned int, std::allocator<unsigned int> >& loot)
+{
+    bool hasLoot = false;
+    uint32_t* pData = loot.data();
 
-//     if(this->m_DynamicContent)
-//     {
-//         hasLoot = GenerateLootDynamically(loot);
-//     } 
-//     else 
-//     {
-//         pData[0] = this->m_DefaultLootItems[0];
-//         pData[1] = this->m_DefaultLootItems[1];
-//         pData[2] = this->m_DefaultLootItems[2];
-//         pData[3] = this->m_DefaultLootItems[3];
+    if(this->m_DynamicContent)
+    {
+        hasLoot = GenerateLootDynamically(loot);
+    } 
+    else 
+    {
+        pData[0] = this->m_DefaultLootItems[0];
+        pData[1] = this->m_DefaultLootItems[1];
+        pData[2] = this->m_DefaultLootItems[2];
+        pData[3] = this->m_DefaultLootItems[3];
 
-//         if (pData[0] != 0 || pData[1] != 0 || pData[2] != 0 || pData[3] != 0)
-//         {
-//             hasLoot = true;
-//         }
-//     }
+        if (pData[0] != 0 || pData[1] != 0 || pData[2] != 0 || pData[3] != 0)
+        {
+            hasLoot = true;
+        }
+    }
 
-//     if(hasLoot)
-//     {
-//         if(!this->m_BonusCollected)
-//         {
-//             uint32_t itemCount = this->m_TotalItemCount;
+    if(hasLoot)
+    {
+        if(!this->m_BonusCollected)
+        {
+            uint32_t itemCount = this->m_TotalItemCount;
 
-//             CHashString ammo_hash;
-//             ammo_hash.m_Hash = HashString("ammo_collector");
+            CHashString ammo_hash;
+            ammo_hash.m_Hash = HashString("ammo_collector");
 
-//             CUpgradeableValuesManager* pMgr = CAvaSingle<CUpgradeableValuesManager>::Instance;
-//             float f = pMgr->GetFloat(ammo_hash);
+            CUpgradeableValuesManager* pMgr = CAvaSingle<CUpgradeableValuesManager>::Instance;
+            float f = pMgr->GetFloat(ammo_hash);
 
-//             float total = static_cast<float>(itemCount) * (f - 1.0f);
+            float total = static_cast<float>(itemCount) * (f - 1.0f);
 
-//             this->m_BonusPointsAccumulated = total;
-//         }
-//     }
+            this->m_BonusPointsAccumulated = total;
+        }
+    }
     
-//     this->m_HasBeenGenerated = true;
-//     return hasLoot;
-// }
+    this->m_HasBeenGenerated = true;
+    return hasLoot;
+}
 
-// void CLootBag::HandleEvent(NEvent::CEventImpl const*, NEvent::CEventData const&)
-// {
+void CLootBag::HandleEvent(NEvent::CEventImpl const*, NEvent::CEventData const&)
+{
 
-// }
+}
 
-// void CLootBag::SetProperties(CRuntimeContainer const&, SGameObjectSetPropertiesContext*)
-// {
+void CLootBag::SetProperties(CRuntimeContainer const&, SGameObjectSetPropertiesContext*)
+{
 
-// }
+}
