@@ -1,57 +1,67 @@
-# Producer Target String:
-# GNU C++ 4.8.1 -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -std=gnu++11 -fno-common -fPIC -fvisibility=hidden -fstack-protector
+.PHONY: default
+default: help
 
-export MSYS2_ARG_CONV_EXCL=*
+# Docker information
+DOCKER_TAG       := mm-image
+DOCKER_VERSION   ?= latest
+DOCKER_CONTAINER := mm  # Must match docker_container in the project YAML!
+DOCKER_WORKDIR   := /mm # Must match WORKDIR in the Dockerfile!
 
-.SUFFIXES:
+# ============================================================================#
+# Split the game executable with ELFSplit
+# ============================================================================#
+.PHONY: split
+split:
+# TODO(kiwi) Im lazy :(
+	@echo "Not implemented!"
 
-CC  := /opt/gcc-4.8.1/bin/gcc
-CXX := /opt/gcc-4.8.1/bin/g++
+# ============================================================================#
+# Starts up the MM decomp Docker container
+# ============================================================================#
+.PHONY: run
+run:
+# Release old container if it exists
+	docker stop $(DOCKER_CONTAINER) && docker rm $(DOCKER_CONTAINER) || true
 
-MM_PROJECT_DIR := /decomp/src/Volumes/products/madmax/source/perforce/mm/branch/world/source
-MM_CTG_DIR := /decomp/src/Volumes/products/madmax/source/perforce/ctg
+# Mount the repository source code & tools
+	docker run --detach --tty \
+		--name $(DOCKER_CONTAINER) \
+		--mount type=bind,src="$(shell pwd)",dst=$(DOCKER_WORKDIR) \
+		$(DOCKER_TAG):$(DOCKER_VERSION)
 
-# Default Flags
-CFLAGS   := -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -std=gnu99 -fno-common -fPIC -fvisibility=hidden -fstack-protector -DNDEBUG -I$(MM_PROJECT_DIR) -I$(MM_CTG_DIR)
-CXXFLAGS := -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -std=gnu++11 -fno-common -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -fstack-protector -DNDEBUG -I$(MM_PROJECT_DIR) -I$(MM_CTG_DIR)
+# Re-run the latest configure script.
+# Can't do this in the Dockerfile because the bind mount is too late!
+	docker exec $(DOCKER_CONTAINER) python3 ./configure.py
 
+# Build the latest Clangd compile commands
+	python ./tools/ninja/make_compile_cmds.py
 
-###
-#	Library make file adjustments
-###
+# ============================================================================#
+# Pulls the latest MM decomp Docker image
+# ============================================================================#
+.PHONY: docker-pull
+docker-pull:
+# TODO(kiwi) We need to push the Docker image somewhere
+	@echo "Not implemented!"
 
-STUNTMAN_DIR := src/Volumes/Libraries/StuntMan/StuntMan-1.2.8/Source
+# ============================================================================#
+# Builds the MM decomp Docker image locally
+# ============================================================================#
+.PHONY: docker-build
+docker-build:
+	docker build \
+		. \
+		-t $(DOCKER_TAG):$(DOCKER_VERSION)
 
-# Auto-include every directory under StuntMan Source
-STUNTMAN_INCLUDES := $(addprefix -I,$(shell find $(STUNTMAN_DIR) -type d 2>/dev/null))
-
-# Target-specific CXXFLAGS for StuntMan object files
-base_objects/Volumes/Libraries/StuntMan/%.cpp.o: \
-	CXXFLAGS := -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -std=gnu++11 -fPIC -fvisibility=hidden -fstack-protector -DNDEBUG $(STUNTMAN_INCLUDES)
-
-MINIUPNP_DIR := src/Volumes/Libraries/MiniUPnP/MiniUPnPc-1.9/Source
-MINIUPNP_INCLUDES := $(addprefix -I,$(shell find $(MINIUPNP_DIR) -type d 2>/dev/null))
-
-# Target-specific CFLAGS for MiniUPnP object files (.c)
-base_objects/Volumes/Libraries/MiniUPnP/%.c.o: \
-    CFLAGS := -msse2 -mcx16 -mtune=generic -march=x86-64 -g -O3 -fPIC -fvisibility=hidden -fstack-protector $(MINIUPNP_INCLUDES)
-
-
-###
-#	make file arguments
-###
-
-base_objects/%.cxx.o: src/%.cxx
-	@mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-base_objects/%.cpp.o: src/%.cpp
-	@mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
-
-base_objects/%.c.o: src/%.c
-	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-clean:
-	rm -rf base_objects
+# ============================================================================#
+# Help display
+# ============================================================================#
+.PHONY: help
+help:
+	@echo "==================================================================="
+	@echo "Available Make targets:                                            "
+	@echo "==================================================================="
+	@echo "split:                    Split the game executable with ELFSplit  "
+	@echo "run:                      Starts up the MM decomp Docker container "
+	@echo "docker-pull:              Pulls the latest MM decomp Docker image  "
+	@echo "docker-build:             Builds the MM decomp Docker image locally"

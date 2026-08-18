@@ -1,0 +1,50 @@
+# ============================================================================#
+#                                                                             #
+# Decomp project config file                                                  #
+#                                                                             #
+# ============================================================================#
+
+# ========================================================================#
+# The name of the Docker container used to execute compile commands.
+#
+# ========================================================================#
+docker_container: mm
+
+# ========================================================================#
+# The name of the compiler executable that should be used for C code.
+# It is assumed that this executable can be found using the $PATH variable.
+#
+# ========================================================================#
+c_compiler: gcc
+
+# ========================================================================#
+# The name of the compiler executable that should be used for C++ code.
+# It is assumed that this executable can be found using the $PATH variable.
+#
+# ========================================================================#
+cpp_compiler: g++
+
+# ========================================================================#
+# Compiler flags for enabling useful warnings.
+# Only applied to decompiled code, not open-source libraries.
+#
+# ========================================================================#
+cflags_pedantic: ["-Werror=unused"]
+
+# ========================================================================#
+# Compiler flags to apply across all code in debug builds.
+#
+# ========================================================================#
+cflags_debug: ["-DDEBUG"]
+
+# ========================================================================#
+# Compiler flags to apply across all code in release builds.
+#
+# ========================================================================#
+cflags_release: ["-DNDEBUG"]
+
+# ========================================================================#
+# Additional flags to pass to the Clangd language parser.
+#
+# ========================================================================#
+clangd_flags: [-Wsuggest-override]
