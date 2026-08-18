@@ -5,7 +5,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: mm-image
+  IMAGE_TAG: latest
 
 jobs:
   build-and-push-image:
@@ -36,5 +37,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ IMAGE_TAG }}
           labels: ${{ steps.meta.outputs.labels }}
