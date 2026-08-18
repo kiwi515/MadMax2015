@@ -8,11 +8,13 @@
 
 from json import dump
 from os import getcwd
-from os.path import abspath
+from os.path import abspath, relpath
+from os.path import join as pathjoin
 
 from lib.config import DecompConfig
 from lib.define import COMPILE_COMMANDS_NAME
 from lib.paths import Object, Library, Batch
+from lib.utility import find_files, C_EXTENSIONS, CPP_EXTENSIONS
 from master_object_layout import create_object_layout
 
 
@@ -32,9 +34,28 @@ def make_compile_cmds(config: DecompConfig):
     commands = []
     object_layout = create_object_layout(config)
 
+    found = set()
+
     for lib in object_layout:
+        # Emit commands for library objects
         for obj in lib.objects():
             commands.append(make_cmds_single(config, lib, obj))
+            found.add(obj.path())
+
+        # Search for files that may only be in a batch
+        for it in find_files(
+                pathjoin(config.src_dir, lib._prefix), C_EXTENSIONS + CPP_EXTENSIONS):
+
+            # Prevent duplicates
+            if it in found:
+                continue
+
+            # Convert to relative path
+            it = relpath(it, config.src_dir)
+
+            batch_obj = Object(obj.config, obj.is_matching(), it)
+            commands.append(make_cmds_single(config, lib, batch_obj))
+            found.add(it)
 
     with open(COMPILE_COMMANDS_NAME, "w+", encoding="utf-8") as f:
         dump(commands, f, indent=4)
