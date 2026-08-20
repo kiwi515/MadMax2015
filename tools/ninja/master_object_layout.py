@@ -1952,7 +1952,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="CoreLibs",
-            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/CoreLibs/main/",
             flags=[
                 *config.cflags_pedantic,
                 *config.cflags_common,
