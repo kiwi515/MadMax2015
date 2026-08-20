@@ -133,7 +133,7 @@ void MurmurHash3_x64_128 ( const void * key, const int len,
 //-----------------------------------------------------------------------------
 // clang-format on
 
-uint64_t HashBuffer64(const void* data, size_t length, unsigned int seed) {
+uint64_t HashBuffer64(const void* data, size_t length, uint32_t seed) {
     uint64_t result = 0;
     MurmurHash3_x64_128(data, length, seed, &result);
 

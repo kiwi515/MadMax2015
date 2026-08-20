@@ -18,7 +18,7 @@ UseTab: Never
 
 IncludeCategories:
   # standard library headers
-  - Regex: "<[[:alnum:].]+>"
+  - Regex: "<([[:alnum:]|_).]+>"
     Priority: 1
     CaseSensitive: true
 
@@ -28,18 +28,23 @@ IncludeCategories:
     CaseSensitive: true
 
   # ctg/components headers
-  - Regex: '(<|")(Animation|Base|GameSystem|Graphics|Input|Physics|Sound|System)\/'
+  - Regex: '(<|")(Adf|BFBC|CoreLibs|ALib|Debug|Platform|Thread|CpuFragment|Effect|GraphicsDevice|GraphScript|GUI_XVM|HashResolver|hkaCustom|IO|Memory|Message|Network|Profile|Render|ResourceCache|RoadGraph|SoundModule|TerrainSampling|TexSupport|TM2|Xvm2)\/'
     Priority: 3
+    CaseSensitive: true
+
+  # ctg/components headers
+  - Regex: '(<|")(Animation|Base|GameSystem|Graphics|Input|Physics|Sound|System)\/'
+    Priority: 4
     CaseSensitive: true
 
   # avalanche engine headers
   - Regex: '(<|")AvaCore\/'
-    Priority: 4
+    Priority: 5
     CaseSensitive: true
 
   # mm game code headers
   - Regex: '(<|")(Application|Game|fragments)\/'
-    Priority: 5
+    Priority: 6
     CaseSensitive: true
 
   # all other headers
