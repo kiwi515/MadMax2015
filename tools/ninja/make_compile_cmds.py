@@ -87,7 +87,9 @@ def make_cmds_single(config: DecompConfig, lib: Library, obj: Object) -> dict:
 
     # Fix include paths that are relative to the container
     arguments = [
-        x.replace(f"/{config.docker_container}", "") for x in arguments]
+        x.replace(f"-I/{config.docker_container}/", "-I")
+         .replace(f"-isystem/{config.docker_container}/", "-isystem")
+        for x in arguments]
 
     # Batch files define BATCH_* format macros for conditional compilation
     if type(obj) == Batch:
