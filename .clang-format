@@ -1,0 +1,52 @@
+﻿---
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: Cpp11
+
+AccessModifierOffset: -4
+AllowShortFunctionsOnASingleLine: Empty
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+FixNamespaceComments: true
+IncludeBlocks: Regroup
+IndentWidth: 4
+InsertNewlineAtEOF: true
+PointerAlignment: Left
+ShortNamespaceLines: 0
+SortIncludes: "true"
+SortUsingDeclarations: "true"
+UseTab: Never
+
+IncludeCategories:
+  # standard library headers
+  - Regex: "<([[:alnum:]|_).]+>"
+    Priority: 1
+    CaseSensitive: true
+
+  # boost headers
+  - Regex: '(<|")boost\/'
+    Priority: 2
+    CaseSensitive: true
+
+  # ctg/components headers
+  - Regex: '(<|")(Adf|BFBC|CoreLibs|ALib|Debug|Platform|Thread|CpuFragment|Effect|GraphicsDevice|GraphScript|GUI_XVM|HashResolver|hkaCustom|IO|Memory|Message|Network|Profile|Render|ResourceCache|RoadGraph|SoundModule|TerrainSampling|TexSupport|TM2|Xvm2)\/'
+    Priority: 3
+    CaseSensitive: true
+
+  # ctg/components headers
+  - Regex: '(<|")(Animation|Base|GameSystem|Graphics|Input|Physics|Sound|System)\/'
+    Priority: 4
+    CaseSensitive: true
+
+  # avalanche engine headers
+  - Regex: '(<|")AvaCore\/'
+    Priority: 5
+    CaseSensitive: true
+
+  # mm game code headers
+  - Regex: '(<|")(Application|Game|fragments)\/'
+    Priority: 6
+    CaseSensitive: true
+
+  # all other headers
+  - Regex: ".*"
+    Priority: 0

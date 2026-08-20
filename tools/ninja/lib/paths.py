@@ -6,7 +6,6 @@
 
 from os.path import join as pathjoin
 from os.path import split, splitext, basename
-from typing import Optional
 
 from .config import DecompConfig
 

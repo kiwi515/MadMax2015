@@ -32,6 +32,75 @@ cpp_compiler: g++
 cflags_pedantic: ["-Werror=unused"]
 
 # ========================================================================#
+# Compiler flags to apply across all code.
+#
+# ========================================================================#
+cflags_common: [
+    # havok physics
+    "-isystem/mm/src/Volumes/Products/MadMax/Source/Feral3rdParty/Havok/hk2014_1_0_r1/",
+
+    # 3rdparty libraries
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/calltree/modified/calltree/libs/callback/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/fr_hydra/modified/agoraHttp/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/fr_wbnc/modified/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/fr_wbnc/modified/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/rapidjson/branch/0.11/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/3rdparty/rev/modified/2013.5.5.8/",
+
+    # ctg components
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Animation/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Animation/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Base/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Base/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/GameSystem/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/GameSystem/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Graphics/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Graphics/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Input/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Input/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Physics/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Physics/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/Sound/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/Sound/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/components/System/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/ctg/components/System/include",
+
+    # ctg libraries
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/ADF/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/BFBC/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/CoreLibs/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/CpuFragment/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Effect/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/GUI_XVM/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphScript/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphicsDevice/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/HashResolver/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/IO/branch/35.0.3/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Memory/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Message/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Network/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Profile/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Render/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/ResourceCache/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/RoadGraph/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/RoadGraph/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/SoundModule/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/TM2/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/TerrainSampling/branch/13.0.0/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/include",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/include",
+
+    # engine
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/engine/AvaCore/main",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/engine/AvaCore/main",
+
+    # project
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/project",
+    "-I/mm/src/Volumes/Products/MadMax/Source/perforce/mm/branch/world/source/build/Win64/Final/project",
+  ]
+
+# ========================================================================#
 # Compiler flags to apply across all code in debug builds.
 #
 # ========================================================================#

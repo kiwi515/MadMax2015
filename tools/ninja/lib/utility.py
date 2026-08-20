@@ -9,6 +9,10 @@ from os.path import join as pathjoin
 from os.path import sep, splitext
 
 
+C_EXTENSIONS = (".c", ".c.inc")
+CPP_EXTENSIONS = (".cc", ".cp", ".cpp", ".cxx", ".c++", ".inc", ".inl")
+
+
 def find_files(root_path: str, extensions: list[str] = None) -> list[str]:
     """Searches recursively from the root path for all files matching any of
     the specified file extensions.

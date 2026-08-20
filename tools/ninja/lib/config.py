@@ -75,12 +75,16 @@ class DecompConfig:
     Only applied to decompiled code, not open-source libraries.
     """
 
+    cflags_common: list[str] = field(default_factory=list[str])
+    """Compiler flags to apply across all code.
+    """
+
     cflags_debug: list[str] = field(default_factory=list[str])
-    """Compiler flags to apply across all module code in debug builds.
+    """Compiler flags to apply across all code in debug builds.
     """
 
     cflags_release: list[str] = field(default_factory=list[str])
-    """Compiler flags to apply across all module code in release builds.
+    """Compiler flags to apply across all code in release builds.
     """
 
     clangd_flags: list[str] = field(default_factory=list[str])

@@ -30,6 +30,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="media/BobBuild/madmax/Built/Release/64/Products/MadMax/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -51,6 +52,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/Feral3D/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -129,6 +131,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/FeralLib/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -302,6 +305,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/FeralNet/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -444,6 +448,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/GameLib/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -483,6 +488,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/GameShell/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -538,6 +544,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/Iceworks/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -595,6 +602,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/IndirectX/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -795,6 +803,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Feral/Macdoze/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -925,6 +934,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/mm/branch/world/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -989,6 +999,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/mm/branch/world/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1344,6 +1355,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Libraries/Havok/Feral/ForeignPackfileUtils/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1673,6 +1685,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Feral/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1697,6 +1710,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/calltree/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1717,6 +1731,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/fr_hydra/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1767,6 +1782,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/fr_wbnc/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1841,6 +1857,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/3rdparty/rev/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1869,6 +1886,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/ADF/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1894,6 +1912,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/BFBC/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1914,6 +1933,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1932,9 +1952,10 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
         Library(
             config,
             name="CoreLibs",
-            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Console/main/",
+            prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/CoreLibs/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1968,6 +1989,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/CpuFragment/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -1989,6 +2011,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Effect/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2040,6 +2063,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphicsDevice/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2066,6 +2090,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GraphScript/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2101,6 +2126,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/GUI_XVM/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2134,6 +2160,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/hkaCustom/branch/2013.2/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2155,6 +2182,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/IO/branch/35.0.3/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2189,6 +2217,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Memory/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2209,6 +2238,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Message/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2230,6 +2260,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Network/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2255,6 +2286,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Render/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2277,6 +2309,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/ResourceCache/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2297,6 +2330,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/RoadGraph/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2318,6 +2352,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/SoundModule/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2343,6 +2378,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/TerrainSampling/branch/13.0.0/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2364,6 +2400,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/TM2/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
@@ -2384,6 +2421,7 @@ def create_object_layout(config: DecompConfig) -> list[Library]:
             prefix="Volumes/Products/MadMax/Source/perforce/ctg/libs/Xvm2/main/",
             flags=[
                 *config.cflags_pedantic,
+                *config.cflags_common,
                 "-mtune=generic",
                 "-march=x86-64",
                 "-fstack-protector",
